@@ -1,0 +1,25 @@
+{
+  "presets": [
+      ["@babel/env", {
+        "targets": {
+          "node": "current"
+        }
+      }],
+      "@babel/typescript"
+  ],
+  "plugins": [
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-object-rest-spread",
+      "@babel/plugin-proposal-export-default-from",
+      ["module-resolver", {
+        "root": ["./src"],
+        "alias": {
+          "models": "./src/models",
+          "config": "./src/config",
+          "utils": "./src/utils",
+          "app": "./src/app",
+          "swagger": "./src/swagger"
+        }
+      }]
+  ]
+}
