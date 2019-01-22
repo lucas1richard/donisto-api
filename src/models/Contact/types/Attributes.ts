@@ -1,7 +1,7 @@
 import ContactKeys from './ContactKeys';
+import SeqModel from 'config/database/types/ModelInterface';
 
-interface ContactAttributes {
-  [ContactKeys.ID]?: number;
+interface ContactAttributes extends SeqModel {
   [ContactKeys.UUID]?: string;
   [ContactKeys.FIRST_NAME]: string;
   [ContactKeys.LAST_NAME]: string;
