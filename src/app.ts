@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 const app = express();
 
 import compression from 'compression';  // compresses requests
@@ -27,5 +27,22 @@ app.use((req, res, next) => {
 });
 
 app.use('/api', api);
+
+app.use((err: any, req: Request, res: Response, next: NextFunction) => { // eslint-disable-line no-unused-vars
+  if (process.env.NODE_ENV !== 'test') {
+    console.log(err);
+    // logger.error(err);
+  }
+  if (err.isJoi) {
+    const validationError = {
+      validationError: true,
+      message: err.details[0].message,
+      context: err.details[0].context
+    };
+    res.status(400).send(validationError);
+  } else {
+    res.status(500).send(err.message);
+  }
+});
 
 export default app;

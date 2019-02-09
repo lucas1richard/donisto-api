@@ -1,5 +1,5 @@
 import Sequelize from 'sequelize';
-import ContactKeys from '../types/ContactKeys';
+import { ContactKeys } from '../types';
 
 const attributes = {
   id: {
@@ -13,27 +13,11 @@ const attributes = {
   },
   [ContactKeys.FIRST_NAME]: {
     type: Sequelize.STRING,
-    allowNull: true
+    allowNull: false
   },
   [ContactKeys.LAST_NAME]: {
     type: Sequelize.STRING,
-    allowNull: true
-  },
-  [ContactKeys.EMAIL]: {
-    type: Sequelize.STRING,
-    validate: {
-      isEmail: true
-    },
-    unique: true,
     allowNull: false
-  },
-  [ContactKeys.PASSWORD]: {
-    type: Sequelize.TEXT,
-    allowNull: false
-  },
-  [ContactKeys.SALT]: {
-    type: Sequelize.TEXT,
-    allowNull: true
   }
 };
 

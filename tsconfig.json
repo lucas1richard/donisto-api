@@ -9,11 +9,13 @@
         "noImplicitAny": true,
         "sourceMap": true,
         "outDir": "./dist",
-        "rootDir": "./src",
-        "baseUrl": "./src",
+        "rootDir": "src",
+        "baseUrl": "src",
     },
     "include": [
-        "./src/**/*"
+        "./src/**/*",
+        "./src",
+        "./src/**/**/*"
     ],
     "exclude": [
         "./node_modules",

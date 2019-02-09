@@ -1,18 +1,17 @@
 {
-  "name": "express-typescript-starter",
+  "name": "donisto",
   "version": "0.1.0",
-  "description": "A starting point for Node.js express apps with TypeScript",
+  "description": "A place to donate",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Microsoft/TypeScript-Node-Starter"
+    "url": "https://github.com/lucas1richard/donisto"
   },
-  "author": "Bowden Kelly",
+  "author": "Richard Lucas",
   "license": "MIT",
   "scripts": {
     "start": "npm run serve",
     "serve": "node dist/server.js",
     "watch-node": "nodemon dist/server.js",
-    "watch": "concurrently -k -p \"[{name}]\" -n \"Sass,TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-sass\" \"npm run watch-ts\" \"npm run watch-node\"",
     "test": "jest --forceExit --coverage --verbose",
     "watch-test": "npm run test -- --watchAll",
     "build-ts": "tsc",
@@ -26,9 +25,11 @@
     "debug": "npm run build && npm run watch-debug",
     "serve-debug": "nodemon --inspect dist/server.js",
     "watch-debug": "concurrently -k -p \"[{name}]\" -n \"Sass,TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-sass\" \"npm run watch-ts\" \"npm run serve-debug\"",
-    "build": "npm run build:types && npm run build:js",
     "build:types": "tsc --emitDeclarationOnly",
-    "build:js": "babel src --out-dir dist --extensions \".ts,.js\" --source-maps inline"
+    "build:js": "babel src --out-dir dist --extensions \".ts,.js\" --source-maps inline --watch",
+    "build": "concurrently -p \"[{name}]\" -n \"build:types,build:js\" -c \"yellow.bold,cyan\" \"npm run build:types\" \"npm run build:js\" -w",
+    "watch": "yarn run build -- -w",
+    "watchAndStart": "concurrently \"yarn run watch\" \"yarn run watch-node\""
   },
   "dependencies": {
     "@types/joi": "^14.0.1",

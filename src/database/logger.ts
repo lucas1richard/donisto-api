@@ -41,7 +41,7 @@ const logger: ILogger = (query: string) => {
     output = output.replace(regEx, chalk.cyan(word.toLowerCase()));
   });
   console.log(`${output}`);
-  console.log(chalk.white('\n========================================================================\n'));
+  console.log(chalk.gray('-----------------------------------'));
 };
 
 module.exports = logger;

@@ -1,13 +1,14 @@
 import errorHandler from 'errorhandler';
 import conn from './config/database/conn';
 import app from './app';
+import './database/associate';
 
 /**
  * Error Handler. Provides full stack - remove for production
  */
-app.use(errorHandler());
+// app.use(errorHandler());
 
-conn.sync({ force: true });
+conn.sync();
 
 /**
  * Start Express server.

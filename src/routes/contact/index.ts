@@ -4,7 +4,7 @@ import createContactController from './controllers/createContact';
 
 const router = Router();
 
-router.get('/', getContactController);
-router.get('/create', createContactController);
+router.post('/get', getContactController);
+router.post('/create', createContactController);
 
 export default router;
