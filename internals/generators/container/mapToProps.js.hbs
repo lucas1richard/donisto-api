@@ -1,0 +1,20 @@
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
+import { createStructuredSelector } from 'reselect';
+import { makeSelect{{properCase name}} } from './selectors';
+
+const mapStateToProps = createStructuredSelector({
+  {{properCase name}}: makeSelect{{properCase name}}()
+});
+
+function mapDispatchToProps(dispatch: Dispatch) {
+  return {
+    dispatch
+  };
+}
+
+{{#if wantActionsAndReducer}}
+export default connect(mapStateToProps, mapDispatchToProps);
+{{else}}
+export default connect(null, mapDispatchToProps);
+{{/if}}

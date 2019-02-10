@@ -1,0 +1,20 @@
+import React from 'react';
+import { Text } from 'react-native';
+{{#if wantActionsAndReducer}}
+import mapToProps from './mapToProps';
+{{/if}}
+
+interface I{{ properCase name }}Props {
+}
+
+export class {{ properCase name }} extends React.{{{ component }}}<I{{ properCase name }}Props> {
+  render() {
+    return (
+      <Text>
+        {{ properCase name }} component
+      </Text>
+    );
+  }
+}
+
+export default mapToProps({{ properCase name }});

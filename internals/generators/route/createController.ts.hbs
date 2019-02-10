@@ -1,0 +1,13 @@
+import { Request, Response, NextFunction } from 'express';
+// import { bodySchema } from './validate';
+
+const create{{ properCase name }}Controller = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    // await bodySchema.validate(req.body);
+    res.send('Create {{ properCase name }}');
+  } catch (err) {
+    next(err);
+  }
+};
+
+export default create{{ properCase name }}Controller;

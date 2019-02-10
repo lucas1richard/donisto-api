@@ -1,0 +1,8 @@
+import { createSelector } from 'reselect';
+
+export const select{{ properCase name }}Domain = () => (state) => state.{{ camelCase name }};
+
+export const makeSelect{{ properCase name }} = () => createSelector(
+  select{{ properCase name }}Domain(),
+  (substate) => substate
+);

@@ -1,0 +1,19 @@
+/*
+ *
+ * {{ properCase name }} actions
+ *
+ */
+
+import {{ properCase name }}Constants from './constants';
+
+export type T{{ properCase name }}Actions =
+  IDefaultAction
+;
+
+interface IDefaultAction {
+  type: {{ properCase name }}Constants.DEFAULT_ACTION
+}
+
+export const defaultAction = (): IDefaultAction => ({
+  type: {{ properCase name }}Constants.DEFAULT_ACTION
+});

@@ -1,0 +1,15 @@
+import {{ properCase name }}Constants from '../constants';
+import { T{{ properCase name }}Actions } from '../actions';
+
+const initialState = {};
+
+function {{ camelCase name }}Reducer(state = initialState, action: T{{ properCase name }}Actions) {
+  switch (action.type) {
+    case {{ properCase name }}Constants.DEFAULT_ACTION:
+      return state;
+    default:
+      return state;
+  }
+}
+
+export default {{ camelCase name }}Reducer;

@@ -1,0 +1,11 @@
+import { Request, Response, NextFunction } from 'express';
+
+const get{{ properCase name }}Controller = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    res.send('Get {{ properCase name }}');
+  } catch (err) {
+    next(err);
+  }
+};
+
+export default get{{ properCase name }}Controller;

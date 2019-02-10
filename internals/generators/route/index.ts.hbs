@@ -1,0 +1,14 @@
+import { Router } from 'express';
+import get{{ properCase name }}Controller from './controllers/get{{ properCase name }}';
+import create{{ properCase name }}Controller from './controllers/create{{ properCase name }}';
+import update{{ properCase name }}Controller from './controllers/update{{ properCase name }}';
+import delete{{ properCase name }}Controller from './controllers/delete{{ properCase name }}';
+
+const router = Router();
+
+router.get('/', get{{ properCase name }}Controller);
+router.post('/', create{{ properCase name }}Controller);
+router.put('/', update{{ properCase name }}Controller);
+router.delete('/', delete{{ properCase name }}Controller);
+
+export default router;
