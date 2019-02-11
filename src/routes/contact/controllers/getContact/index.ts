@@ -9,9 +9,13 @@ const getContactController = async (req: Request, res: Response, next: NextFunct
       email: req.body.email,
       password: req.body.password
     });
-    setTimeout(() => {
-      res.json(contact);
-    }, 1000);
+    if (contact) {
+      setTimeout(() => {
+        res.json(contact);
+      }, 1000);
+    } else {
+      res.sendStatus(401);
+    }
   } catch (err) {
     next(err);
   }
