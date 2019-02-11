@@ -1,0 +1,51 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.MONGODB_URI = exports.SESSION_SECRET = exports.ENVIRONMENT = void 0;
+
+var _logger = _interopRequireDefault(require("./logger"));
+
+var _dotenv = _interopRequireDefault(require("dotenv"));
+
+var _fs = _interopRequireDefault(require("fs"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+if (_fs.default.existsSync('.env')) {
+  _logger.default.debug('Using .env file to supply config environment variables');
+
+  _dotenv.default.config({
+    path: '.env'
+  });
+} else {
+  _logger.default.debug('Using .env.example file to supply config environment variables');
+
+  _dotenv.default.config({
+    path: '.env.example'
+  }); // you can delete this after you create your own .env file!
+
+}
+
+const ENVIRONMENT = process.env.NODE_ENV;
+exports.ENVIRONMENT = ENVIRONMENT;
+const prod = ENVIRONMENT === 'production'; // Anything else is treated as 'dev'
+
+const SESSION_SECRET = process.env['SESSION_SECRET'];
+exports.SESSION_SECRET = SESSION_SECRET;
+const MONGODB_URI = prod ? process.env['MONGODB_URI'] : process.env['MONGODB_URI_LOCAL'];
+exports.MONGODB_URI = MONGODB_URI;
+
+if (!SESSION_SECRET) {
+  _logger.default.error('No client secret. Set SESSION_SECRET environment variable.');
+
+  process.exit(1);
+}
+
+if (!MONGODB_URI) {
+  _logger.default.error('No mongo connection string. Set MONGODB_URI environment variable.');
+
+  process.exit(1);
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy91dGlsL3NlY3JldHMudHMiXSwibmFtZXMiOlsiZnMiLCJleGlzdHNTeW5jIiwibG9nZ2VyIiwiZGVidWciLCJkb3RlbnYiLCJjb25maWciLCJwYXRoIiwiRU5WSVJPTk1FTlQiLCJwcm9jZXNzIiwiZW52IiwiTk9ERV9FTlYiLCJwcm9kIiwiU0VTU0lPTl9TRUNSRVQiLCJNT05HT0RCX1VSSSIsImVycm9yIiwiZXhpdCJdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBOztBQUNBOztBQUNBOzs7O0FBRUEsSUFBSUEsWUFBR0MsVUFBSCxDQUFjLE1BQWQsQ0FBSixFQUEyQjtBQUN2QkMsa0JBQU9DLEtBQVAsQ0FBYSx3REFBYjs7QUFDQUMsa0JBQU9DLE1BQVAsQ0FBYztBQUFFQyxJQUFBQSxJQUFJLEVBQUU7QUFBUixHQUFkO0FBQ0gsQ0FIRCxNQUdPO0FBQ0hKLGtCQUFPQyxLQUFQLENBQWEsZ0VBQWI7O0FBQ0FDLGtCQUFPQyxNQUFQLENBQWM7QUFBRUMsSUFBQUEsSUFBSSxFQUFFO0FBQVIsR0FBZCxFQUZHLENBRXVDOztBQUM3Qzs7QUFDTSxNQUFNQyxXQUFXLEdBQUdDLE9BQU8sQ0FBQ0MsR0FBUixDQUFZQyxRQUFoQzs7QUFDUCxNQUFNQyxJQUFJLEdBQUdKLFdBQVcsS0FBSyxZQUE3QixDLENBQTJDOztBQUVwQyxNQUFNSyxjQUFjLEdBQUdKLE9BQU8sQ0FBQ0MsR0FBUixDQUFZLGdCQUFaLENBQXZCOztBQUNBLE1BQU1JLFdBQVcsR0FBR0YsSUFBSSxHQUFHSCxPQUFPLENBQUNDLEdBQVIsQ0FBWSxhQUFaLENBQUgsR0FBZ0NELE9BQU8sQ0FBQ0MsR0FBUixDQUFZLG1CQUFaLENBQXhEOzs7QUFFUCxJQUFJLENBQUNHLGNBQUwsRUFBcUI7QUFDakJWLGtCQUFPWSxLQUFQLENBQWEsNERBQWI7O0FBQ0FOLEVBQUFBLE9BQU8sQ0FBQ08sSUFBUixDQUFhLENBQWI7QUFDSDs7QUFFRCxJQUFJLENBQUNGLFdBQUwsRUFBa0I7QUFDZFgsa0JBQU9ZLEtBQVAsQ0FBYSxtRUFBYjs7QUFDQU4sRUFBQUEsT0FBTyxDQUFDTyxJQUFSLENBQWEsQ0FBYjtBQUNIIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IGxvZ2dlciBmcm9tICcuL2xvZ2dlcic7XG5pbXBvcnQgZG90ZW52IGZyb20gJ2RvdGVudic7XG5pbXBvcnQgZnMgZnJvbSAnZnMnO1xuXG5pZiAoZnMuZXhpc3RzU3luYygnLmVudicpKSB7XG4gICAgbG9nZ2VyLmRlYnVnKCdVc2luZyAuZW52IGZpbGUgdG8gc3VwcGx5IGNvbmZpZyBlbnZpcm9ubWVudCB2YXJpYWJsZXMnKTtcbiAgICBkb3RlbnYuY29uZmlnKHsgcGF0aDogJy5lbnYnIH0pO1xufSBlbHNlIHtcbiAgICBsb2dnZXIuZGVidWcoJ1VzaW5nIC5lbnYuZXhhbXBsZSBmaWxlIHRvIHN1cHBseSBjb25maWcgZW52aXJvbm1lbnQgdmFyaWFibGVzJyk7XG4gICAgZG90ZW52LmNvbmZpZyh7IHBhdGg6ICcuZW52LmV4YW1wbGUnIH0pOyAgLy8geW91IGNhbiBkZWxldGUgdGhpcyBhZnRlciB5b3UgY3JlYXRlIHlvdXIgb3duIC5lbnYgZmlsZSFcbn1cbmV4cG9ydCBjb25zdCBFTlZJUk9OTUVOVCA9IHByb2Nlc3MuZW52Lk5PREVfRU5WO1xuY29uc3QgcHJvZCA9IEVOVklST05NRU5UID09PSAncHJvZHVjdGlvbic7IC8vIEFueXRoaW5nIGVsc2UgaXMgdHJlYXRlZCBhcyAnZGV2J1xuXG5leHBvcnQgY29uc3QgU0VTU0lPTl9TRUNSRVQgPSBwcm9jZXNzLmVudlsnU0VTU0lPTl9TRUNSRVQnXTtcbmV4cG9ydCBjb25zdCBNT05HT0RCX1VSSSA9IHByb2QgPyBwcm9jZXNzLmVudlsnTU9OR09EQl9VUkknXSA6IHByb2Nlc3MuZW52WydNT05HT0RCX1VSSV9MT0NBTCddO1xuXG5pZiAoIVNFU1NJT05fU0VDUkVUKSB7XG4gICAgbG9nZ2VyLmVycm9yKCdObyBjbGllbnQgc2VjcmV0LiBTZXQgU0VTU0lPTl9TRUNSRVQgZW52aXJvbm1lbnQgdmFyaWFibGUuJyk7XG4gICAgcHJvY2Vzcy5leGl0KDEpO1xufVxuXG5pZiAoIU1PTkdPREJfVVJJKSB7XG4gICAgbG9nZ2VyLmVycm9yKCdObyBtb25nbyBjb25uZWN0aW9uIHN0cmluZy4gU2V0IE1PTkdPREJfVVJJIGVudmlyb25tZW50IHZhcmlhYmxlLicpO1xuICAgIHByb2Nlc3MuZXhpdCgxKTtcbn1cbiJdfQ==

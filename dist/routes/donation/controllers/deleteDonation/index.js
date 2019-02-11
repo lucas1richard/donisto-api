@@ -1,0 +1,18 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+const deleteDonationController = async (req, res, next) => {
+  try {
+    res.send('Delete Donation');
+  } catch (err) {
+    next(err);
+  }
+};
+
+var _default = deleteDonationController;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3NyYy9yb3V0ZXMvZG9uYXRpb24vY29udHJvbGxlcnMvZGVsZXRlRG9uYXRpb24vaW5kZXgudHMiXSwibmFtZXMiOlsiZGVsZXRlRG9uYXRpb25Db250cm9sbGVyIiwicmVxIiwicmVzIiwibmV4dCIsInNlbmQiLCJlcnIiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFFQSxNQUFNQSx3QkFBd0IsR0FBRyxPQUFPQyxHQUFQLEVBQXFCQyxHQUFyQixFQUFvQ0MsSUFBcEMsS0FBMkQ7QUFDMUYsTUFBSTtBQUNGRCxJQUFBQSxHQUFHLENBQUNFLElBQUosQ0FBUyxpQkFBVDtBQUNELEdBRkQsQ0FFRSxPQUFPQyxHQUFQLEVBQVk7QUFDWkYsSUFBQUEsSUFBSSxDQUFDRSxHQUFELENBQUo7QUFDRDtBQUNGLENBTkQ7O2VBUWVMLHdCIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgUmVxdWVzdCwgUmVzcG9uc2UsIE5leHRGdW5jdGlvbiB9IGZyb20gJ2V4cHJlc3MnO1xuXG5jb25zdCBkZWxldGVEb25hdGlvbkNvbnRyb2xsZXIgPSBhc3luYyAocmVxOiBSZXF1ZXN0LCByZXM6IFJlc3BvbnNlLCBuZXh0OiBOZXh0RnVuY3Rpb24pID0+IHtcbiAgdHJ5IHtcbiAgICByZXMuc2VuZCgnRGVsZXRlIERvbmF0aW9uJyk7XG4gIH0gY2F0Y2ggKGVycikge1xuICAgIG5leHQoZXJyKTtcbiAgfVxufTtcblxuZXhwb3J0IGRlZmF1bHQgZGVsZXRlRG9uYXRpb25Db250cm9sbGVyO1xuIl19

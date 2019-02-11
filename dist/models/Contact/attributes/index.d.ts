@@ -1,0 +1,37 @@
+import Sequelize from 'sequelize';
+declare const attributes: {
+    id: {
+        type: Sequelize.DataTypeBigInt;
+        autoIncrement: boolean;
+    };
+    [ContactKeys.UUID]: {
+        type: Sequelize.DataTypeUUID;
+        defaultValue: Sequelize.DataTypeUUIDv4;
+        primaryKey: boolean;
+    };
+    [ContactKeys.FIRST_NAME]: {
+        type: Sequelize.DataTypeString;
+        allowNull: boolean;
+    };
+    [ContactKeys.LAST_NAME]: {
+        type: Sequelize.DataTypeString;
+        allowNull: boolean;
+    };
+    [ContactKeys.EMAIL]: {
+        type: Sequelize.DataTypeString;
+        validate: {
+            isEmail: boolean;
+        };
+        unique: boolean;
+        allowNull: boolean;
+    };
+    [ContactKeys.PASSWORD]: {
+        type: Sequelize.DataTypeText;
+        allowNull: boolean;
+    };
+    [ContactKeys.SALT]: {
+        type: Sequelize.DataTypeText;
+        allowNull: boolean;
+    };
+};
+export default attributes;

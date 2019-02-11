@@ -1,0 +1,20 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+// import { bodySchema } from './validate';
+const createDonationController = async (req, res, next) => {
+  try {
+    // await bodySchema.validate(req.body);
+    res.send('Create Donation');
+  } catch (err) {
+    next(err);
+  }
+};
+
+var _default = createDonationController;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3NyYy9yb3V0ZXMvZG9uYXRpb24vY29udHJvbGxlcnMvY3JlYXRlRG9uYXRpb24vaW5kZXgudHMiXSwibmFtZXMiOlsiY3JlYXRlRG9uYXRpb25Db250cm9sbGVyIiwicmVxIiwicmVzIiwibmV4dCIsInNlbmQiLCJlcnIiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFDQTtBQUVBLE1BQU1BLHdCQUF3QixHQUFHLE9BQU9DLEdBQVAsRUFBcUJDLEdBQXJCLEVBQW9DQyxJQUFwQyxLQUEyRDtBQUMxRixNQUFJO0FBQ0Y7QUFDQUQsSUFBQUEsR0FBRyxDQUFDRSxJQUFKLENBQVMsaUJBQVQ7QUFDRCxHQUhELENBR0UsT0FBT0MsR0FBUCxFQUFZO0FBQ1pGLElBQUFBLElBQUksQ0FBQ0UsR0FBRCxDQUFKO0FBQ0Q7QUFDRixDQVBEOztlQVNlTCx3QiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFJlcXVlc3QsIFJlc3BvbnNlLCBOZXh0RnVuY3Rpb24gfSBmcm9tICdleHByZXNzJztcbi8vIGltcG9ydCB7IGJvZHlTY2hlbWEgfSBmcm9tICcuL3ZhbGlkYXRlJztcblxuY29uc3QgY3JlYXRlRG9uYXRpb25Db250cm9sbGVyID0gYXN5bmMgKHJlcTogUmVxdWVzdCwgcmVzOiBSZXNwb25zZSwgbmV4dDogTmV4dEZ1bmN0aW9uKSA9PiB7XG4gIHRyeSB7XG4gICAgLy8gYXdhaXQgYm9keVNjaGVtYS52YWxpZGF0ZShyZXEuYm9keSk7XG4gICAgcmVzLnNlbmQoJ0NyZWF0ZSBEb25hdGlvbicpO1xuICB9IGNhdGNoIChlcnIpIHtcbiAgICBuZXh0KGVycik7XG4gIH1cbn07XG5cbmV4cG9ydCBkZWZhdWx0IGNyZWF0ZURvbmF0aW9uQ29udHJvbGxlcjtcbiJdfQ==

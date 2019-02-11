@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/models/Organization/index.ts"],"names":[],"mappings":";;;;;AACA,gEAA6C;AAC7C,8DAAsC;AAGtC,MAAM,aAAa,GAAG,cAAS,CAAC,MAAM,CAAC,eAAe,EAAE,oBAAU,CAAiD,CAAC;AAEpH,aAAa,CAAC,SAAS,GAAG,CAAC,MAAM,EAAE,EAAE;IACnC,aAAa,CAAC,OAAO,CAAC,MAAM,CAAC,QAAQ,CAAC,CAAC;AACzC,CAAC,CAAC;AAEF,kBAAe,aAAa,CAAC"}

@@ -1,0 +1,9 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = SeqModel;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9kYXRhYmFzZS90eXBlcy9Nb2RlbEludGVyZmFjZS50cyJdLCJuYW1lcyI6WyJTZXFNb2RlbCJdLCJtYXBwaW5ncyI6Ijs7Ozs7O2VBU2VBLFEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBNb21lbnQgfSBmcm9tICdtb21lbnQnO1xuXG5pbnRlcmZhY2UgU2VxTW9kZWwge1xuICBpZD86IG51bWJlcjtcbiAgY3JlYXRlZEF0PzogTW9tZW50O1xuICB1cGRhdGVkQXQ/OiBNb21lbnQ7XG4gIGRlbGV0ZWRBdD86IE1vbWVudDtcbn1cblxuZXhwb3J0IGRlZmF1bHQgU2VxTW9kZWw7XG4iXX0=

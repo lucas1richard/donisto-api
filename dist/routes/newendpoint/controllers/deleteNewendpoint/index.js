@@ -1,0 +1,18 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+const deleteNewendpointController = async (req, res, next) => {
+  try {
+    res.send('Delete Newendpoint');
+  } catch (err) {
+    next(err);
+  }
+};
+
+var _default = deleteNewendpointController;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3NyYy9yb3V0ZXMvbmV3ZW5kcG9pbnQvY29udHJvbGxlcnMvZGVsZXRlTmV3ZW5kcG9pbnQvaW5kZXgudHMiXSwibmFtZXMiOlsiZGVsZXRlTmV3ZW5kcG9pbnRDb250cm9sbGVyIiwicmVxIiwicmVzIiwibmV4dCIsInNlbmQiLCJlcnIiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFFQSxNQUFNQSwyQkFBMkIsR0FBRyxPQUFPQyxHQUFQLEVBQXFCQyxHQUFyQixFQUFvQ0MsSUFBcEMsS0FBMkQ7QUFDN0YsTUFBSTtBQUNGRCxJQUFBQSxHQUFHLENBQUNFLElBQUosQ0FBUyxvQkFBVDtBQUNELEdBRkQsQ0FFRSxPQUFPQyxHQUFQLEVBQVk7QUFDWkYsSUFBQUEsSUFBSSxDQUFDRSxHQUFELENBQUo7QUFDRDtBQUNGLENBTkQ7O2VBUWVMLDJCIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgUmVxdWVzdCwgUmVzcG9uc2UsIE5leHRGdW5jdGlvbiB9IGZyb20gJ2V4cHJlc3MnO1xuXG5jb25zdCBkZWxldGVOZXdlbmRwb2ludENvbnRyb2xsZXIgPSBhc3luYyAocmVxOiBSZXF1ZXN0LCByZXM6IFJlc3BvbnNlLCBuZXh0OiBOZXh0RnVuY3Rpb24pID0+IHtcbiAgdHJ5IHtcbiAgICByZXMuc2VuZCgnRGVsZXRlIE5ld2VuZHBvaW50Jyk7XG4gIH0gY2F0Y2ggKGVycikge1xuICAgIG5leHQoZXJyKTtcbiAgfVxufTtcblxuZXhwb3J0IGRlZmF1bHQgZGVsZXRlTmV3ZW5kcG9pbnRDb250cm9sbGVyO1xuIl19

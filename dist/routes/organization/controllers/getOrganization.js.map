@@ -1,0 +1,1 @@
+{"version":3,"file":"getOrganization.js","sourceRoot":"","sources":["../../../../src/routes/organization/controllers/getOrganization.ts"],"names":[],"mappings":";;;;;;;;;;;;;AACA,uEAA+C;AAE/C,MAAM,0BAA0B,GAAG,CAAO,GAAY,EAAE,GAAa,EAAE,EAAE;IACvE,MAAM,aAAa,GAAG,MAAM,sBAAY,CAAC,OAAO,EAAE,CAAC;IACnD,GAAG,CAAC,IAAI,CAAC,aAAa,CAAC,CAAC;AAC1B,CAAC,CAAA,CAAC;AAEF,kBAAe,0BAA0B,CAAC"}
