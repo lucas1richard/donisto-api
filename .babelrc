@@ -14,6 +14,8 @@
       ["module-resolver", {
         "root": ["./src"],
         "alias": {
+          "middlewares": "./src/middlewares",
+          "redis-client": "./src/redis-client",
           "models": "./src/models",
           "config": "./src/config",
           "utils": "./src/utils",
