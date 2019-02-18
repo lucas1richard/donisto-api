@@ -4,10 +4,12 @@ import loginController from './contact/controllers/login';
 import organization from './organization';
 import newsfeed from './newsfeed';
 import authMiddleware from 'middlewares/v1/auth';
+import createContactController from './contact/controllers/createContact';
 
 const router = Router();
 
 router.post('/login', loginController); // unsecured route
+router.post('/contact/create', createContactController); // unsecured route
 
 
 router.use(authMiddleware);
