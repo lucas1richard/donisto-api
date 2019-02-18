@@ -25,6 +25,15 @@ declare const attributes: {
         unique: boolean;
         allowNull: boolean;
     };
+    [ContactKeys.CITY]: {
+        type: Sequelize.DataTypeString;
+    };
+    [ContactKeys.STATE]: {
+        type: Sequelize.DataTypeString;
+    };
+    [ContactKeys.ZIP]: {
+        type: Sequelize.DataTypeString;
+    };
     [ContactKeys.PASSWORD]: {
         type: Sequelize.DataTypeText;
         allowNull: boolean;
