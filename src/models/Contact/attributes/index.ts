@@ -27,6 +27,15 @@ const attributes = {
     unique: true,
     allowNull: false
   },
+  [ContactKeys.CITY]: {
+    type: Sequelize.STRING
+  },
+  [ContactKeys.STATE]: {
+    type: Sequelize.STRING
+  },
+  [ContactKeys.ZIP]: {
+    type: Sequelize.STRING
+  },
   [ContactKeys.PASSWORD]: {
     type: Sequelize.TEXT,
     allowNull: false

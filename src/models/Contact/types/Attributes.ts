@@ -8,6 +8,9 @@ interface ContactAttributes extends SeqModel {
   [ContactKeys.EMAIL]: string;
   [ContactKeys.PASSWORD]: string;
   [ContactKeys.SALT]?: string;
+  [ContactKeys.CITY]?: string;
+  [ContactKeys.STATE]?: string;
+  [ContactKeys.ZIP]?: string;
 }
 
 export default ContactAttributes;
