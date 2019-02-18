@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import getOrganizationController from './controllers/getOrganization';
+import getAllOrganizationsController from './controllers/getAllOrganizations';
 import createOrganizationController from './controllers/createOrganization';
 
 const router = Router();
 
-router.get('/', getOrganizationController);
+router.get('/', getAllOrganizationsController);
 router.get('/create', createOrganizationController);
 
 export default router;
