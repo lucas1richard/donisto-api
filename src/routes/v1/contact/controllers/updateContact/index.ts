@@ -5,13 +5,13 @@ import Contact from 'models/Contact';
 const updateContactController = async (req: Request, res: Response, next: NextFunction) => {
   try {
     // await bodySchema.validate(req.body);
-    const contact = await Contact.find({
+    const contact = await Contact.findOne({
       where: {
         uuid: res.locals.uuid
       }
     });
     await contact.update(req.body);
-    const updatedContact = await Contact.find({
+    const updatedContact = await Contact.findOne({
       where: {
         uuid: res.locals.uuid
       }

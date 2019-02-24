@@ -2,11 +2,10 @@ import Sequelize from 'sequelize';
 import sequelize from 'config/database/conn';
 import attributes from './attributes';
 import OrganizationAttributes from './types/Attributes';
+import { OrganizationInstance } from './types/OrganizationInstance';
 
-const Organizations = sequelize.define('Organizations', attributes) as Sequelize.Model<any, OrganizationAttributes>;
+export type OrganizationModel = Sequelize.Model<OrganizationInstance, OrganizationAttributes>;
 
-Organizations.associate = (models) => {
-  Organizations.hasMany(models.Contacts);
-};
+const Organizations = sequelize.define('organizations', attributes) as OrganizationModel;
 
 export default Organizations;

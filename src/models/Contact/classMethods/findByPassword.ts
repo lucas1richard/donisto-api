@@ -2,6 +2,7 @@ import * as crypto from 'crypto';
 import Sequelize from 'sequelize';
 import ContactKeys from '../types/ContactKeys';
 import { ContactInstance } from '../types/ContactInstance';
+import Organizations from 'models/Organization';
 const { Op } = Sequelize;
 
 interface ICredentials {
@@ -38,7 +39,10 @@ const findByPassword: IFindByPassword = async function (credentials) {
           [Op.iLike]: credentials.email
         },
         [ContactKeys.PASSWORD]: value
-      }
+      },
+      include: [{
+        model: Organizations
+      }]
     });
 };
 

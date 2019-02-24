@@ -1,0 +1,15 @@
+import Sequelize from 'sequelize';
+import sequelize from 'config/database/conn';
+import attributes from './attributes';
+import {{ properCase name }}Attributes from './types/Attributes';
+import { {{ properCase name }}Instance } from './types/{{ properCase name }}Instance';
+
+interface I{{ properCase name }}Methods {
+}
+
+interface I{{ properCase name }} extends Sequelize.Model<{{ properCase name }}Instance, {{ properCase name }}Attributes>, I{{ properCase name }}Methods {}
+
+const {{ properCase name }} = sequelize.define('{{ lowerCase name }}', attributes, {
+}) as I{{ properCase name }};
+
+export default {{ properCase name }};

@@ -1,0 +1,12 @@
+import * as Sequelize from 'sequelize';
+import {{ properCase name }}Attributes from './Attributes';
+
+interface {{ properCase name }}InstanceMethods {
+}
+
+export interface {{ properCase name }}Prototype {
+  prototype: {{ properCase name }}InstanceMethods;
+}
+
+export interface {{ properCase name }}Instance extends Sequelize.Instance<{{ properCase name }}Attributes>, {{ properCase name }}InstanceMethods, {{ properCase name }}Attributes {
+}

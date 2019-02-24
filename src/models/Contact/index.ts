@@ -12,7 +12,7 @@ interface IContactsClassMethods {
 
 interface IContactsModel extends Sequelize.Model<ContactInstance, ContactAttributes>, IContactsClassMethods {}
 
-const Contacts = sequelize.define('Contacts', attributes, {
+const Contacts = sequelize.define('contacts', attributes, {
   hooks: {
     beforeCreate
   }

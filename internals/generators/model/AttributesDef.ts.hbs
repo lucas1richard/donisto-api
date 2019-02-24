@@ -1,0 +1,8 @@
+import {{ properCase name }}Keys from './{{ properCase name }}Keys';
+import SeqModel from 'config/database/types/ModelInterface';
+
+interface {{ properCase name }}Attributes extends SeqModel {
+  [{{ properCase name }}Keys.UUID]?: string;
+}
+
+export default {{ properCase name }}Attributes;

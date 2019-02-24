@@ -20,6 +20,7 @@
           "config": "./src/config",
           "utils": "./src/utils",
           "app": "./src/app",
+          "database": "./src/database",
           "swagger": "./src/swagger"
         }
       }]

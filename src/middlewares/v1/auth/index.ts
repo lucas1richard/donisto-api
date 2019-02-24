@@ -65,7 +65,7 @@ async function checkSecureRoute(token: string) {
   const user_id = decoded.id || decoded.token;
   const { uuid } = decoded;
   console.log(decoded);
-  const contact = await Contact.find({
+  const contact = await Contact.findOne({
     where: {
       [ContactKeys.UUID]: uuid
     }

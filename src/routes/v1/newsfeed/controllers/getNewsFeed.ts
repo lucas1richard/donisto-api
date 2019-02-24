@@ -1,20 +1,10 @@
 import { Request, Response, NextFunction } from 'express';
+import NewsFeed from 'models/NewsFeed';
 
 const getNewsFeedController = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    res.json([{
-      id: '1',
-      title: 'News Item 1',
-      subtitle: 'From organization 1'
-    }, {
-      id: '2',
-      title: 'News Item 2',
-      subtitle: 'From organization 2'
-    }, {
-      id: '3',
-      title: 'News Item 3',
-      subtitle: 'From organization 3'
-    }]);
+    const newsFeedItems = await NewsFeed.findAll();
+    res.json(newsFeedItems);
   } catch (err) {
     next(err);
   }

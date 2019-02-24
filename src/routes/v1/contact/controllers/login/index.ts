@@ -13,7 +13,6 @@ const loginController = async (req: Request, res: Response, next: NextFunction) 
       password: req.body.password
     });
     if (contact) {
-      console.log(process.env.JWT_SECRET);
       const token = jwt.encode({
         id: contact.id,
         uuid: contact.uuid
