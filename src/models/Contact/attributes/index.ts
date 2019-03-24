@@ -43,6 +43,10 @@ const attributes = {
   [ContactKeys.SALT]: {
     type: Sequelize.TEXT,
     allowNull: true
+  },
+  [ContactKeys.FACEBOOK_ID]: {
+    type: Sequelize.TEXT,
+    allowNull: true
   }
 };
 

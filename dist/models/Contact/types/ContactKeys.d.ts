@@ -7,6 +7,7 @@ declare enum ContactKeys {
     STATE = "state",
     ZIP = "zip",
     PASSWORD = "password",
-    SALT = "salt"
+    SALT = "salt",
+    FACEBOOK_ID = "facebook_id"
 }
 export default ContactKeys;

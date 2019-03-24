@@ -1,2 +1,2 @@
-import joi from 'joi';
-export declare const bodySchema: joi.ObjectSchema;
+import Joi from 'joi';
+export declare const bodySchema: Joi.ObjectSchema;

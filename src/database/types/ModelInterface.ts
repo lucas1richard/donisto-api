@@ -1,7 +1,7 @@
 import { Moment } from 'moment';
 
 interface SeqModel {
-  id?: number;
+  id?: string;
   createdAt?: Moment;
   updatedAt?: Moment;
   deletedAt?: Moment;

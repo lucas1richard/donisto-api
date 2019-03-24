@@ -1,8 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import Contact from 'models/Contact';
 import { bodySchema } from './validate';
-import jwt from 'jwt-simple';
-import redisClient, { hmsetAsync } from 'redis-client';
+import handleToken from 'utils/handleToken';
 
 const loginController = async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -12,20 +11,9 @@ const loginController = async (req: Request, res: Response, next: NextFunction) 
       email: req.body.email,
       password: req.body.password
     });
+
     if (contact) {
-      const token = jwt.encode({
-        id: contact.id,
-        uuid: contact.uuid
-      }, process.env.JWT_SECRET);
-
-      const key = `donisto:contact:token:${token}`;
-
-      await hmsetAsync(key, {
-        user_id: contact.id,
-        uuid: contact.uuid
-      });
-
-      redisClient.expire(key, 86400); // expire in 24 hours
+      const token = await handleToken(contact.id, contact.uuid);
 
       res
         .status(200)

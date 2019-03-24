@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import Contact from 'models/Contact';
-import jwt from 'jwt-simple';
 import { bodySchema } from './validate';
+import handleToken from 'utils/handleToken';
 
 const createContactController = async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -9,10 +9,7 @@ const createContactController = async (req: Request, res: Response, next: NextFu
 
     const contact = await Contact.create(req.body);
 
-    const token = jwt.encode({
-      id: contact.id,
-      uuid: contact.uuid
-    }, process.env.JWT_SECRET);
+    const token = await handleToken(contact.id, contact.uuid);
 
     res
       .set('token', token)

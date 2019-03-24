@@ -42,5 +42,9 @@ declare const attributes: {
         type: Sequelize.DataTypeText;
         allowNull: boolean;
     };
+    [ContactKeys.FACEBOOK_ID]: {
+        type: Sequelize.DataTypeText;
+        allowNull: boolean;
+    };
 };
 export default attributes;

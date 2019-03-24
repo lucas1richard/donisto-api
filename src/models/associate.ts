@@ -1,1 +1,0 @@
-import Contact from './Contact';

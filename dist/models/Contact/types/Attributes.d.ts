@@ -10,5 +10,6 @@ interface ContactAttributes extends SeqModel {
     [ContactKeys.CITY]?: string;
     [ContactKeys.STATE]?: string;
     [ContactKeys.ZIP]?: string;
+    [ContactKeys.FACEBOOK_ID]?: string;
 }
 export default ContactAttributes;

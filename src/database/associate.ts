@@ -9,15 +9,14 @@ import OrganizationsContacts from 'models/OrganizationsContacts';
 //   foreignKey: foreignKeys.ORGANIZATION
 // });
 
-Contact.belongsToMany(Organization, {
-  through: OrganizationsContacts,
-  foreignKey: foreignKeys.CONTACT
-});
+const org = { foreignKey: foreignKeys.ORGANIZATION };
+const contact = { foreignKey: foreignKeys.CONTACT };
+const thruOrgContacts = {
+  through: OrganizationsContacts
+};
 
-Organization.belongsToMany(Contact, {
-  through: OrganizationsContacts,
-  foreignKey: foreignKeys.ORGANIZATION
-});
+Contact.belongsToMany(Organization, { ...thruOrgContacts, ...contact });
+Organization.belongsToMany(Contact, { ...thruOrgContacts, ...org });
 
 // OrganizationsContacts.hasMany(Organization, {
 //   foreignKey: foreignKeys.ORGANIZATION
@@ -27,14 +26,7 @@ Organization.belongsToMany(Contact, {
 //   foreignKey: foreignKeys.CONTACT
 // });
 
-Organization.hasMany(NewsFeed, {
-  foreignKey: foreignKeys.ORGANIZATION
-});
+Organization.hasMany(NewsFeed, org);
+NewsFeed.belongsTo(Organization, org);
 
-NewsFeed.belongsTo(Organization, {
-  foreignKey: foreignKeys.ORGANIZATION
-});
-
-Donor.belongsTo(Contact, {
-  foreignKey: foreignKeys.CONTACT
-});
+Donor.belongsTo(Contact, contact);

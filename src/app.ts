@@ -26,6 +26,9 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('/', (req: Request, res: Response) => {
+  res.send('Donisto API');
+});
 app.use('/api', api);
 
 app.use((err: any, req: Request, res: Response, next: NextFunction) => { // eslint-disable-line no-unused-vars

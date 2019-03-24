@@ -1,14 +1,12 @@
-import joi from 'joi';
+import Joi from 'joi';
 
 const emailError = () => 'Email must be a valid email';
-const passwordError = (errors: any) => {
-  console.log(errors);
-  return 'Password is required';
-};
+const passwordError = () => 'Password is required';
 
-export const bodySchema = joi.object({
-  email: joi.string().email().required().error(emailError),
-  password: joi.string().required().error(passwordError),
-  first_name: joi.string(),
-  last_name: joi.string()
+export const bodySchema = Joi.object({
+  email: Joi.string().email().required().error(emailError),
+  password: Joi.string().required().error(passwordError),
+  first_name: Joi.string(),
+  last_name: Joi.string(),
+  facebook_id: Joi.string()
 });

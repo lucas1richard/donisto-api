@@ -5,14 +5,14 @@ import { bodySchema } from './validate';
 const getContactController = async (req: Request, res: Response, next: NextFunction) => {
   try {
     await bodySchema.validate(req.body);
+
     const contact = await Contact.findByPassword({
       email: req.body.email,
       password: req.body.password
     });
+
     if (contact) {
-      setTimeout(() => {
-        res.json(contact);
-      }, 1000);
+      res.json(contact);
     } else {
       res.sendStatus(401);
     }
