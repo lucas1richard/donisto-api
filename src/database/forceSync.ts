@@ -1,5 +1,5 @@
 import conn from './conn';
-import './database/associate';
+import './associate';
 
 conn
   .sync({ force: true })
