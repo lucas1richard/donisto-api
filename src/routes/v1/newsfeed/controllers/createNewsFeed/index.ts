@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { Op } from 'sequelize';
 import NewsFeed from 'models/NewsFeed';
 import NewsFeedKeys from 'models/NewsFeed/types/NewsFeedKeys';
 import Organizations from 'models/Organization';
@@ -6,6 +7,9 @@ import { OrganizationKeys } from 'models/Organization/types';
 import { NextFunction } from 'connect';
 import seqInstance from 'config/database/conn';
 import { bodySchema } from './validate';
+import Cause from 'models/Cause';
+import CauseKeys from 'models/Cause/types/CauseKeys';
+import NewsFeedCauses from 'models/NewsFeedCauses';
 
 const createNewsFeedController = async (req: Request, res: Response, next: NextFunction) => {
   let transaction;
@@ -24,6 +28,18 @@ const createNewsFeedController = async (req: Request, res: Response, next: NextF
         [OrganizationKeys.UUID]: req.body.organizationUuid
       }
     });
+
+    const causes = await Cause.findAll({
+      where: {
+        [CauseKeys.UUID]: {
+          [Op.in]: req.body.causesUuid
+        }
+      }
+    });
+
+    for (let ix = 0; ix < causes.length; ix += 1) {
+      await newsFeed.addCause(causes[ix], { through: NewsFeedCauses });
+    }
 
     await newsFeed.setOrganization(organization, { transaction });
 

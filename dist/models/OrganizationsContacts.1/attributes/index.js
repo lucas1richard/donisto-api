@@ -1,0 +1,27 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _sequelize = _interopRequireDefault(require("sequelize"));
+
+var _OrganizationsContactsKeys = _interopRequireDefault(require("../types/OrganizationsContactsKeys"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const attributes = {
+  id: {
+    type: _sequelize.default.BIGINT,
+    autoIncrement: true
+  },
+  [_OrganizationsContactsKeys.default.UUID]: {
+    type: _sequelize.default.UUID,
+    defaultValue: _sequelize.default.UUIDV4,
+    primaryKey: true
+  }
+};
+var _default = attributes;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3NyYy9tb2RlbHMvT3JnYW5pemF0aW9uc0NvbnRhY3RzLjEvYXR0cmlidXRlcy9pbmRleC50cyJdLCJuYW1lcyI6WyJhdHRyaWJ1dGVzIiwiaWQiLCJ0eXBlIiwiU2VxdWVsaXplIiwiQklHSU5UIiwiYXV0b0luY3JlbWVudCIsIk9yZ2FuaXphdGlvbnNDb250YWN0c0tleXMiLCJVVUlEIiwiZGVmYXVsdFZhbHVlIiwiVVVJRFY0IiwicHJpbWFyeUtleSJdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBOztBQUNBOzs7O0FBRUEsTUFBTUEsVUFBVSxHQUFHO0FBQ2pCQyxFQUFBQSxFQUFFLEVBQUU7QUFDRkMsSUFBQUEsSUFBSSxFQUFFQyxtQkFBVUMsTUFEZDtBQUVGQyxJQUFBQSxhQUFhLEVBQUU7QUFGYixHQURhO0FBS2pCLEdBQUNDLG1DQUEwQkMsSUFBM0IsR0FBa0M7QUFDaENMLElBQUFBLElBQUksRUFBRUMsbUJBQVVJLElBRGdCO0FBRWhDQyxJQUFBQSxZQUFZLEVBQUVMLG1CQUFVTSxNQUZRO0FBR2hDQyxJQUFBQSxVQUFVLEVBQUU7QUFIb0I7QUFMakIsQ0FBbkI7ZUFZZVYsVSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBTZXF1ZWxpemUgZnJvbSAnc2VxdWVsaXplJztcbmltcG9ydCBPcmdhbml6YXRpb25zQ29udGFjdHNLZXlzIGZyb20gJy4uL3R5cGVzL09yZ2FuaXphdGlvbnNDb250YWN0c0tleXMnO1xuXG5jb25zdCBhdHRyaWJ1dGVzID0ge1xuICBpZDoge1xuICAgIHR5cGU6IFNlcXVlbGl6ZS5CSUdJTlQsXG4gICAgYXV0b0luY3JlbWVudDogdHJ1ZVxuICB9LFxuICBbT3JnYW5pemF0aW9uc0NvbnRhY3RzS2V5cy5VVUlEXToge1xuICAgIHR5cGU6IFNlcXVlbGl6ZS5VVUlELFxuICAgIGRlZmF1bHRWYWx1ZTogU2VxdWVsaXplLlVVSURWNCxcbiAgICBwcmltYXJ5S2V5OiB0cnVlXG4gIH1cbn07XG5cbmV4cG9ydCBkZWZhdWx0IGF0dHJpYnV0ZXM7XG4iXX0=
