@@ -7,8 +7,7 @@ interface NewsFeedInstanceMethods {
   setOrganization(organization: OrganizationInstance, options: Sequelize.QueryOptions): any;
   addCause(
     cause: CauseInstance,
-    options: Sequelize.AssociationOptionsBelongsToMany,
-    opts: { transaction: Sequelize.Transaction }
+    options: Sequelize.AssociationForeignKeyOptions
   ): any;
 }
 
