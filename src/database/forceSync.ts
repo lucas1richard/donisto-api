@@ -5,5 +5,5 @@ conn
   .sync({ force: true })
   .then(() => {
     console.log('forceSync executed');
-    process.exit();
+    // process.exit();
   });
