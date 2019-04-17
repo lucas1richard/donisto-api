@@ -28,7 +28,7 @@ const config: DBConfig = {
   },
   production: {
     url: process.env.DATABASE_URL,
-    logging: false,
+    logging: console.log,
     operatorsAliases: false
   }
 };
