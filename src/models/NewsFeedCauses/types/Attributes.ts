@@ -5,6 +5,7 @@ import foreignKeys from 'config/database/foreignKeys';
 interface NewsFeedCausesAttributes extends SeqModel {
   [NewsFeedCausesKeys.UUID]?: string;
   [foreignKeys.ORGANIZATION]?: string;
+  [foreignKeys.NEWSFEED]?: string;
 }
 
 export default NewsFeedCausesAttributes;

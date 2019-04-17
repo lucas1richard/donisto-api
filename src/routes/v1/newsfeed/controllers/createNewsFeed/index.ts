@@ -38,7 +38,7 @@ const createNewsFeedController = async (req: Request, res: Response, next: NextF
     });
 
     for (let ix = 0; ix < causes.length; ix += 1) {
-      await newsFeed.addCause(causes[ix], { through: NewsFeedCauses });
+      await newsFeed.addCause(causes[ix], { through: NewsFeedCauses }, { transaction });
     }
 
     await newsFeed.setOrganization(organization, { transaction });
