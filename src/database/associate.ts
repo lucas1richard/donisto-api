@@ -6,12 +6,14 @@ import foreignKeys from './foreignKeys';
 import OrganizationsContacts from 'models/OrganizationsContacts';
 import Cause from 'models/Cause';
 import NewsFeedCauses from 'models/NewsFeedCauses';
+import Donation from 'models/Donation';
 
 // Organization.hasMany(Contact, {
 //   foreignKey: foreignKeys.ORGANIZATION
 // });
 
 const org = { foreignKey: foreignKeys.ORGANIZATION };
+const donation = { foreignKey: foreignKeys.DONATION };
 const contact = { foreignKey: foreignKeys.CONTACT };
 const cause = { foreignKey: foreignKeys.CAUSE };
 const newsfeed = { foreignKey: foreignKeys.NEWSFEED };
@@ -41,5 +43,11 @@ NewsFeed.belongsTo(Organization, org);
 
 Organization.hasMany(Cause, org);
 Cause.belongsTo(Organization, org);
+
+Contact.hasMany(Donation, contact);
+Donation.belongsTo(Contact, contact);
+
+Cause.hasMany(Donation, cause);
+Donation.belongsTo(Cause, cause);
 
 Donor.belongsTo(Contact, contact);
