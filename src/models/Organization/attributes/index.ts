@@ -14,7 +14,23 @@ const attributes = {
   [OrganizationKeys.NAME]: {
     type: Sequelize.STRING,
     allowNull: false
-  }
+  },
+  [OrganizationKeys.CITY]: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  [OrganizationKeys.STATE]: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  [OrganizationKeys.MISSION]: {
+    type: Sequelize.TEXT,
+    allowNull: false
+  },
+  [OrganizationKeys.ZIP]: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
 };
 
 export default attributes;

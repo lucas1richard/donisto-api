@@ -3,6 +3,7 @@ export declare enum foreignKeys {
     DONOR = "donor_uuid",
     ORGANIZATION = "organization_uuid",
     NEWSFEED = "news_feed_uuid",
-    CAUSE = "cause_uuid"
+    CAUSE = "cause_uuid",
+    DONATION = "donation_uuid"
 }
 export default foreignKeys;
