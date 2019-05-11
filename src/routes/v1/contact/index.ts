@@ -7,7 +7,7 @@ import getOrgNewsFeedController from './controllers/getOrgNewsFeed';
 const router = Router();
 
 router.put('/', updateContactController);
-router.post('/get', getContactController);
+router.get('/get', getContactController);
 router.post('/login', loginController);
 router.get('/orgnewsfeed', getOrgNewsFeedController);
 

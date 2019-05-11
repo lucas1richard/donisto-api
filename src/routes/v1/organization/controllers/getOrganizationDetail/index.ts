@@ -1,21 +1,19 @@
-import { Request, Response, NextFunction } from 'express';
+import { RequestHandler } from 'express';
 import Organization from 'models/Organization';
 import { OrganizationKeys } from 'models/Organization/types';
 import OrganizationsContacts from 'models/OrganizationsContacts';
 import foreignKeys from 'database/foreignKeys';
+import Links from 'models/Links';
 
-const getOrganizationDetailController = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+const getOrganizationDetailController: RequestHandler = async (req, res, next) => {
   try {
     const { uuid } = res.locals;
     const { organization_uuid } = req.body;
     const organization = await Organization.findOne({
       where: {
         [OrganizationKeys.UUID]: organization_uuid
-      }
+      },
+      include: [Links]
     });
 
     const contactIsMember = await OrganizationsContacts.findOne({

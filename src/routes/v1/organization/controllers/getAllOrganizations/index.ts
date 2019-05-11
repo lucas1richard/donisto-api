@@ -1,9 +1,16 @@
-import { Request, Response } from 'express';
+import { RequestHandler } from 'express';
 import Organization from 'models/Organization';
+import Links from 'models/Links';
 
-const getAllOrganizationsController = async (req: Request, res: Response) => {
-  const organizations = await Organization.findAll();
-  res.json(organizations);
+const getAllOrganizationsController: RequestHandler = async (req, res, next) => {
+  try {
+    const organizations = await Organization.findAll({
+      include: [Links]
+    });
+    res.json(organizations);
+  } catch (err) {
+    next(err);
+  }
 };
 
 export default getAllOrganizationsController;

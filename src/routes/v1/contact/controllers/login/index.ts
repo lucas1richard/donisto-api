@@ -13,7 +13,7 @@ const loginController = async (req: Request, res: Response, next: NextFunction) 
     });
 
     if (contact) {
-      const token = await handleToken(contact.id, contact.uuid);
+      const token = await handleToken(`${contact.id}`, contact.uuid);
 
       res
         .status(200)

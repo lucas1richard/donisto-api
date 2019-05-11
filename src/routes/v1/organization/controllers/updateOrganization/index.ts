@@ -1,12 +1,8 @@
-import {
-  Request,
-  Response
-} from 'express';
+import { RequestHandler } from 'express';
 import Organization from 'models/Organization';
 import OrganizationKeys from 'models/Organization/types/OrganizationKeys';
-import { NextFunction } from 'connect';
 
-const updateOrganizationController = async (req: Request, res: Response, next: NextFunction) => {
+const updateOrganizationController: RequestHandler = async (req, res, next) => {
   try {
     const { city, state, zip, mission, uuid } = req.body;
     const updateObj: { [x: string]: string } = {};

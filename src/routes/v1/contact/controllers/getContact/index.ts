@@ -1,21 +1,18 @@
 import { Request, Response, NextFunction } from 'express';
 import Contact from 'models/Contact';
-import { bodySchema } from './validate';
+import Organizations from 'models/Organization';
 
 const getContactController = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    await bodySchema.validate(req.body);
-
-    const contact = await Contact.findByPassword({
-      email: req.body.email,
-      password: req.body.password
+    const contact = await Contact.findOne({
+      where: {
+        uuid: res.locals.uuid
+      },
+      include: [{
+        model: Organizations
+      }]
     });
-
-    if (contact) {
-      res.json(contact);
-    } else {
-      res.sendStatus(401);
-    }
+    res.json(contact);
   } catch (err) {
     next(err);
   }

@@ -1,8 +1,4 @@
-import {
-  Request,
-  Response,
-  NextFunction
-} from 'express';
+import { RequestHandler } from 'express';
 import OrganizationsContacts from 'models/OrganizationsContacts';
 import foreignKeys from 'database/foreignKeys';
 import Organizations from 'models/Organization';
@@ -10,7 +6,7 @@ import { OrganizationKeys } from 'models/Organization/types';
 import { Op } from 'sequelize';
 import OrganizationsContactsAttributes from 'models/OrganizationsContacts/types/Attributes';
 
-async function getContactOrganizationsController(req: Request, res: Response, next: NextFunction) {
+const getContactOrganizationsController: RequestHandler = async (req, res, next) => {
   try {
     const organizationUuids = await OrganizationsContacts.findAll({
       where: {
@@ -32,6 +28,6 @@ async function getContactOrganizationsController(req: Request, res: Response, ne
   } catch (err) {
     next(err);
   }
-}
+};
 
 export default getContactOrganizationsController;

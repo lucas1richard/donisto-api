@@ -7,6 +7,7 @@ import OrganizationsContacts from 'models/OrganizationsContacts';
 import Cause from 'models/Cause';
 import NewsFeedCauses from 'models/NewsFeedCauses';
 import Donation from 'models/Donation';
+import Links from 'models/Links';
 
 // Organization.hasMany(Contact, {
 //   foreignKey: foreignKeys.ORGANIZATION
@@ -43,6 +44,9 @@ NewsFeed.belongsTo(Organization, org);
 
 Organization.hasMany(Cause, org);
 Cause.belongsTo(Organization, org);
+
+Organization.hasMany(Links, org);
+Links.belongsTo(Organization, org);
 
 Contact.hasMany(Donation, contact);
 Donation.belongsTo(Contact, contact);

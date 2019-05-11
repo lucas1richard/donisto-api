@@ -13,5 +13,21 @@ declare const attributes: {
         type: Sequelize.DataTypeString;
         allowNull: boolean;
     };
+    [OrganizationKeys.CITY]: {
+        type: Sequelize.DataTypeString;
+        allowNull: boolean;
+    };
+    [OrganizationKeys.STATE]: {
+        type: Sequelize.DataTypeString;
+        allowNull: boolean;
+    };
+    [OrganizationKeys.MISSION]: {
+        type: Sequelize.DataTypeText;
+        allowNull: boolean;
+    };
+    [OrganizationKeys.ZIP]: {
+        type: Sequelize.DataTypeString;
+        allowNull: boolean;
+    };
 };
 export default attributes;
