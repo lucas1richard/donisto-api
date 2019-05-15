@@ -1,3 +1,3 @@
-import { Request, Response, NextFunction } from 'express';
-declare function getContactOrganizationsController(req: Request, res: Response, next: NextFunction): Promise<void>;
+import { RequestHandler } from 'express';
+declare const getContactOrganizationsController: RequestHandler;
 export default getContactOrganizationsController;

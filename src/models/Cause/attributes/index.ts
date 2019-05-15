@@ -14,6 +14,14 @@ const attributes = {
   [CauseKeys.NAME]: {
     type: Sequelize.STRING,
     allowNull: false
+  },
+  [CauseKeys.SUGGESTED_DONATION]: {
+    type: Sequelize.DECIMAL,
+    allowNull: true,
+    get() {
+      const val = this.getDataValue(CauseKeys.SUGGESTED_DONATION);
+      return parseFloat(val);
+    }
   }
 };
 

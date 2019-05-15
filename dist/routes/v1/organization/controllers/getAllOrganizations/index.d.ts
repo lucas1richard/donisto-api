@@ -1,3 +1,3 @@
-import { Request, Response } from 'express';
-declare const getAllOrganizationsController: (req: Request, res: Response) => Promise<void>;
+import { RequestHandler } from 'express';
+declare const getAllOrganizationsController: RequestHandler;
 export default getAllOrganizationsController;
