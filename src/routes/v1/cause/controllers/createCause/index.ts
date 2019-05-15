@@ -15,7 +15,8 @@ const createCauseController = async (req: Request, res: Response, next: NextFunc
     transaction = await seqInstance.transaction();
 
     const cause = await Cause.create({
-      [CauseKeys.NAME]: req.body.name
+      [CauseKeys.NAME]: req.body.name,
+      [CauseKeys.SUGGESTED_DONATION]: req.body.suggested_amount
     }, { transaction });
 
     const organization = await Organizations.findOne({

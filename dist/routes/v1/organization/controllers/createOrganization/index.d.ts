@@ -1,4 +1,3 @@
-import { Request, Response } from 'express';
-import { NextFunction } from 'connect';
-declare const createOrganizationController: (req: Request, res: Response, next: NextFunction) => Promise<void>;
+import { RequestHandler } from 'express';
+declare const createOrganizationController: RequestHandler;
 export default createOrganizationController;
