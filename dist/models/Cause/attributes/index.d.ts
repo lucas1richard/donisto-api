@@ -13,5 +13,10 @@ declare const attributes: {
         type: Sequelize.DataTypeString;
         allowNull: boolean;
     };
+    [CauseKeys.SUGGESTED_DONATION]: {
+        type: Sequelize.DataTypeDecimal;
+        allowNull: boolean;
+        get(): number;
+    };
 };
 export default attributes;

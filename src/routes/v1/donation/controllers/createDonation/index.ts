@@ -5,6 +5,7 @@ import ContactKeys from 'models/Contact/types/ContactKeys';
 import Cause from 'models/Cause';
 import CauseKeys from 'models/Cause/types/CauseKeys';
 import seqInstance from 'config/database/conn';
+import DonationKeys from 'models/Donation/types/DonationKeys';
 // import { bodySchema } from './validate';
 
 const createDonationController = async (req: Request, res: Response, next: NextFunction) => {
@@ -13,7 +14,9 @@ const createDonationController = async (req: Request, res: Response, next: NextF
     // await bodySchema.validate(req.body);
     transaction = await seqInstance.transaction();
     const donation = await Donation.create({
-      amount: req.body.amount
+      [DonationKeys.AMOUNT]: req.body.amount,
+      [DonationKeys.IS_ANONYMOUS]: req.body.is_anonymous,
+      [DonationKeys.MESSAGE]: req.body.message,
     }, { transaction });
     const contact = await Contacts.findOne({
       where: {

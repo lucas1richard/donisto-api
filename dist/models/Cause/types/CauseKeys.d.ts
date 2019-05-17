@@ -1,5 +1,6 @@
 declare enum CauseKeys {
     UUID = "uuid",
-    NAME = "name"
+    NAME = "name",
+    SUGGESTED_DONATION = "suggested_donation_amount"
 }
 export default CauseKeys;
