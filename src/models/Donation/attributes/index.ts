@@ -17,6 +17,15 @@ const attributes = {
       const val = this.getDataValue(DonationKeys.AMOUNT);
       return parseFloat(val);
     }
+  },
+  [DonationKeys.IS_ANONYMOUS]: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false,
+    allowNull: true,
+  },
+  [DonationKeys.MESSAGE]: {
+    type: Sequelize.TEXT,
+    allowNull: true,
   }
 };
 
