@@ -1,10 +1,9 @@
-import { Request, Response, NextFunction } from 'express';
-import Contact from 'models/Contact';
-import Organizations from 'models/Organization';
+import { RequestHandler } from 'express';
+import { Contacts, Organizations } from 'models';
 
-const getContactController = async (req: Request, res: Response, next: NextFunction) => {
+const getContactController: RequestHandler = async (req, res, next) => {
   try {
-    const contact = await Contact.findOne({
+    const contact = await Contacts.findOne({
       where: {
         uuid: res.locals.uuid
       },

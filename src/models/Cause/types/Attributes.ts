@@ -5,6 +5,7 @@ interface CauseAttributes extends SeqModel {
   [CauseKeys.UUID]?: string;
   [CauseKeys.NAME]?: string;
   [CauseKeys.SUGGESTED_DONATION]?: string;
+  [CauseKeys.GOAL_AMOUNT]?: number;
 }
 
 export default CauseAttributes;

@@ -1,19 +1,16 @@
-import { Request, Response, NextFunction } from 'express';
-import Donation from 'models/Donation';
-import Contacts from 'models/Contact';
-import ContactKeys from 'models/Contact/types/ContactKeys';
-import Cause from 'models/Cause';
-import CauseKeys from 'models/Cause/types/CauseKeys';
+import { RequestHandler } from 'express';
+import { Donations, Contacts, Causes } from 'models';
+import { ContactKeys, CauseKeys } from 'models/keys';
 import seqInstance from 'config/database/conn';
 import DonationKeys from 'models/Donation/types/DonationKeys';
 // import { bodySchema } from './validate';
 
-const createDonationController = async (req: Request, res: Response, next: NextFunction) => {
+const createDonationController: RequestHandler = async (req, res, next) => {
   let transaction;
   try {
     // await bodySchema.validate(req.body);
     transaction = await seqInstance.transaction();
-    const donation = await Donation.create({
+    const donation = await Donations.create({
       [DonationKeys.AMOUNT]: req.body.amount,
       [DonationKeys.IS_ANONYMOUS]: req.body.is_anonymous,
       [DonationKeys.MESSAGE]: req.body.message,
@@ -23,7 +20,7 @@ const createDonationController = async (req: Request, res: Response, next: NextF
         [ContactKeys.UUID]: res.locals.uuid
       }
     });
-    const cause = await Cause.findOne({
+    const cause = await Causes.findOne({
       where: {
         [CauseKeys.UUID]: req.body.cause_uuid
       }

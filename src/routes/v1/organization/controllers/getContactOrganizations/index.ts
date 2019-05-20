@@ -1,9 +1,8 @@
 import { RequestHandler } from 'express';
-import OrganizationsContacts from 'models/OrganizationsContacts';
-import foreignKeys from 'database/foreignKeys';
-import Organizations from 'models/Organization';
-import { OrganizationKeys } from 'models/Organization/types';
 import { Op } from 'sequelize';
+import foreignKeys from 'database/foreignKeys';
+import { OrganizationsContacts, Organizations } from 'models';
+import { OrganizationKeys } from 'models/keys';
 import OrganizationsContactsAttributes from 'models/OrganizationsContacts/types/Attributes';
 
 const getContactOrganizationsController: RequestHandler = async (req, res, next) => {

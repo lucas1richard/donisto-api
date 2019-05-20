@@ -1,10 +1,8 @@
-import { Request, Response, NextFunction } from 'express';
+import { RequestHandler } from 'express';
 import Contact from 'models/Contact';
-// import { bodySchema } from './validate';
 
-const updateContactController = async (req: Request, res: Response, next: NextFunction) => {
+const updateContactController: RequestHandler = async (req, res, next) => {
   try {
-    // await bodySchema.validate(req.body);
     const contact = await Contact.findOne({
       where: {
         uuid: res.locals.uuid

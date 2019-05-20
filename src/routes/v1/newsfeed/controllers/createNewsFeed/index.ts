@@ -1,17 +1,11 @@
-import { Request, Response } from 'express';
+import { RequestHandler } from 'express';
 import { Op } from 'sequelize';
-import NewsFeed from 'models/NewsFeed';
-import NewsFeedKeys from 'models/NewsFeed/types/NewsFeedKeys';
-import Organizations from 'models/Organization';
-import { OrganizationKeys } from 'models/Organization/types';
-import { NextFunction } from 'connect';
+import { NewsFeed, Organizations, NewsFeedCauses, Causes } from 'models';
+import { NewsFeedKeys, CauseKeys, OrganizationKeys } from 'models/keys';
 import seqInstance from 'config/database/conn';
 import { bodySchema } from './validate';
-import Cause from 'models/Cause';
-import CauseKeys from 'models/Cause/types/CauseKeys';
-import NewsFeedCauses from 'models/NewsFeedCauses';
 
-const createNewsFeedController = async (req: Request, res: Response, next: NextFunction) => {
+const createNewsFeedController: RequestHandler = async (req, res, next) => {
   let transaction;
   try {
     await bodySchema.validate(req.body);
@@ -29,7 +23,7 @@ const createNewsFeedController = async (req: Request, res: Response, next: NextF
       }
     });
 
-    const causes = await Cause.findAll({
+    const causes = await Causes.findAll({
       where: {
         [CauseKeys.UUID]: {
           [Op.in]: req.body.causesUuid

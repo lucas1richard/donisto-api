@@ -1,10 +1,10 @@
-import { Request, Response, NextFunction } from 'express';
-import Donation from 'models/Donation';
+import { RequestHandler } from 'express';
+import { Donations } from 'models';
 import foreignKeys from 'config/database/foreignKeys';
 
-const getDonationController = async (req: Request, res: Response, next: NextFunction) => {
+const getDonationController: RequestHandler = async (req, res, next) => {
   try {
-    const donations = await Donation.findAll({
+    const donations = await Donations.findAll({
       where: {
         [foreignKeys.CONTACT]: res.locals.uuid
       }

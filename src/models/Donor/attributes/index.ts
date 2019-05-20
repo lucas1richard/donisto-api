@@ -1,21 +1,21 @@
 import Sequelize from 'sequelize';
-import { ContactKeys } from '../types';
+import { DonorKeys } from '../types';
 
 const attributes = {
   id: {
     type: Sequelize.BIGINT,
     autoIncrement: true
   },
-  [ContactKeys.UUID]: {
+  [DonorKeys.UUID]: {
     type: Sequelize.UUID,
     defaultValue: Sequelize.UUIDV4,
     primaryKey: true
   },
-  [ContactKeys.FIRST_NAME]: {
+  [DonorKeys.FIRST_NAME]: {
     type: Sequelize.STRING,
     allowNull: false
   },
-  [ContactKeys.LAST_NAME]: {
+  [DonorKeys.LAST_NAME]: {
     type: Sequelize.STRING,
     allowNull: false
   }

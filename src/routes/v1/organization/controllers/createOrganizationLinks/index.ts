@@ -1,8 +1,7 @@
 import { RequestHandler } from 'express';
-import Organizations from 'models/Organization';
+import { Organizations, Links } from 'models';
+import { OrganizationKeys } from 'models/keys';
 import * as Sequelize from 'sequelize';
-import Links from 'models/Links';
-import { OrganizationKeys } from 'models/Organization/types';
 import seqInstance from 'config/database/conn';
 
 const createOrganizationLinksController: RequestHandler =  async (req, res, next) => {

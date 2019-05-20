@@ -1,11 +1,10 @@
 import foreignKeys from 'database/foreignKeys';
-import OrganizationsContacts from 'models/OrganizationsContacts';
+import { OrganizationsContacts, NewsFeed } from 'models';
 import { Op } from 'sequelize';
 import OrganizationsContactsAttributes from 'models/OrganizationsContacts/types/Attributes';
-import { NextFunction, Response, Request } from 'express';
-import NewsFeed from 'models/NewsFeed';
+import { RequestHandler } from 'express';
 
-async function getOrgNewsFeedController(req: Request, res: Response, next: NextFunction) {
+const getOrgNewsFeedController: RequestHandler = async (req, res, next) => {
   try {
     // get organizations associated to the contact
     const organizationUuids = await OrganizationsContacts.findAll({
@@ -29,6 +28,6 @@ async function getOrgNewsFeedController(req: Request, res: Response, next: NextF
   } catch (err) {
     next(err);
   }
-}
+};
 
 export default getOrgNewsFeedController;

@@ -3,6 +3,6 @@ import sequelize from 'config/database/conn';
 import attributes from './attributes';
 import ContactAttributes from './types/Attributes';
 
-const Contacts = sequelize.define('donors', attributes) as Sequelize.Model<any, ContactAttributes>;
+const Donors = sequelize.define('donors', attributes) as Sequelize.Model<any, ContactAttributes>;
 
-export default Contacts;
+export default Donors;

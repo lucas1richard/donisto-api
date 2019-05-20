@@ -1,18 +1,13 @@
-import { Request, Response, NextFunction } from 'express';
-import NewsFeed from 'models/NewsFeed';
-import Cause from 'models/Cause';
+import { RequestHandler } from 'express';
+import { NewsFeed, Causes } from 'models';
 
-const getNewsFeedDetailController = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+const getNewsFeedDetailController: RequestHandler = async (req, res, next) => {
   try {
     const newsFeedItem = await NewsFeed.findOne({
       where: {
         uuid: req.params.newsItemUuid
       },
-      include: [Cause]
+      include: [Causes]
     });
 
     res.json(newsFeedItem);

@@ -1,9 +1,7 @@
 import { RequestHandler } from 'express';
-import Organizations from 'models/Organization';
-import Links from 'models/Links';
-import { OrganizationKeys } from 'models/Organization/types';
+import { Organizations, Links } from 'models';
+import { OrganizationKeys, LinksKeys } from 'models/keys';
 import seqInstance from 'config/database/conn';
-import LinksKeys from 'models/Links/types/LinksKeys';
 import foreignKeys from 'database/foreignKeys';
 
 const { Op } = seqInstance;

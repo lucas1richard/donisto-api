@@ -1,6 +1,6 @@
 import { RequestHandler } from 'express';
-import Organization from 'models/Organization';
-import OrganizationKeys from 'models/Organization/types/OrganizationKeys';
+import { Organizations } from 'models';
+import { OrganizationKeys } from 'models/keys';
 
 const updateOrganizationController: RequestHandler = async (req, res, next) => {
   try {
@@ -18,7 +18,7 @@ const updateOrganizationController: RequestHandler = async (req, res, next) => {
     if (mission) {
       updateObj[OrganizationKeys.MISSION] = mission;
     }
-    const organization = await Organization.findOne({
+    const organization = await Organizations.findOne({
       where: {
         [OrganizationKeys.UUID]: uuid
       }
@@ -26,7 +26,7 @@ const updateOrganizationController: RequestHandler = async (req, res, next) => {
 
     await organization.update(updateObj);
 
-    const updatedOrganization = await Organization.findOne({
+    const updatedOrganization = await Organizations.findOne({
       where: {
         [OrganizationKeys.UUID]: uuid
       }

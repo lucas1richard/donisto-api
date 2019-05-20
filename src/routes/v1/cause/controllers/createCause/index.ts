@@ -1,22 +1,20 @@
-import { Request, Response } from 'express';
-import Cause from 'models/Cause';
-import CauseKeys from 'models/Cause/types/CauseKeys';
-import Organizations from 'models/Organization';
-import { OrganizationKeys } from 'models/Organization/types';
-import { NextFunction } from 'connect';
+import { RequestHandler } from 'express';
+import { Causes, Organizations } from 'models';
+import { CauseKeys, OrganizationKeys } from 'models/keys';
 import seqInstance from 'config/database/conn';
 import { bodySchema } from './validate';
 
-const createCauseController = async (req: Request, res: Response, next: NextFunction) => {
+const createCauseController: RequestHandler = async (req, res, next) => {
   let transaction;
   try {
     await bodySchema.validate(req.body);
 
     transaction = await seqInstance.transaction();
 
-    const cause = await Cause.create({
+    const cause = await Causes.create({
       [CauseKeys.NAME]: req.body.name,
-      [CauseKeys.SUGGESTED_DONATION]: req.body.suggested_amount
+      [CauseKeys.SUGGESTED_DONATION]: req.body.suggested_amount,
+      [CauseKeys.GOAL_AMOUNT]: req.body.goal_amount
     }, { transaction });
 
     const organization = await Organizations.findOne({

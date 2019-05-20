@@ -1,13 +1,13 @@
-import { Request, Response, NextFunction } from 'express';
-import Contact from 'models/Contact';
+import { RequestHandler } from 'express';
+import { Contacts } from 'models';
 import { bodySchema } from './validate';
 import handleToken from 'utils/handleToken';
 
-const loginController = async (req: Request, res: Response, next: NextFunction) => {
+const loginController: RequestHandler = async (req, res, next) => {
   try {
     await bodySchema.validate(req.body);
 
-    const contact = await Contact.findByPassword({
+    const contact = await Contacts.findByPassword({
       email: req.body.email,
       password: req.body.password
     });

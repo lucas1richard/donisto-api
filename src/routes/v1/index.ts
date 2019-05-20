@@ -10,16 +10,15 @@ import createContactController from './contact/controllers/createContact';
 
 const router = Router();
 
-router.post('/login', loginController); // unsecured route
-router.post('/contact/create', createContactController); // unsecured route
-
+/* unsecured */ router.post('/login', loginController);
+/* unsecured */ router.post('/contact/create', createContactController);
 
 router.use(authMiddleware);
 
-router.use('/contact', contact); // secured route
-router.use('/organization', organization); // secured route
-router.use('/newsfeed', newsfeed); // secured route
-router.use('/cause', cause); // secured route
-router.use('/donation', donation); // secured route
+/* secured   */ router.use('/contact', contact);
+/* secured   */ router.use('/organization', organization);
+/* secured   */ router.use('/newsfeed', newsfeed);
+/* secured   */ router.use('/cause', cause);
+/* secured   */ router.use('/donation', donation);
 
 export default router;

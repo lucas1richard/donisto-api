@@ -1,12 +1,7 @@
-import { Request, Response, NextFunction } from 'express';
-import NewsFeed from 'models/NewsFeed';
-import Organizations from 'models/Organization';
+import { RequestHandler } from 'express';
+import { NewsFeed, Organizations } from 'models';
 
-const getNewsFeedController = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+const getNewsFeedController: RequestHandler = async (req, res, next) => {
   try {
     const newsFeedItems = await NewsFeed.findAll({
       order: [

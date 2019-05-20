@@ -22,6 +22,14 @@ const attributes = {
       const val = this.getDataValue(CauseKeys.SUGGESTED_DONATION);
       return parseFloat(val);
     }
+  },
+  [CauseKeys.GOAL_AMOUNT]: {
+    type: Sequelize.DECIMAL,
+    allowNull: false,
+    get() {
+      const val = this.getDataValue(CauseKeys.GOAL_AMOUNT);
+      return parseFloat(val);
+    }
   }
 };
 

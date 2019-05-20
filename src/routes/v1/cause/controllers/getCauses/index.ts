@@ -1,13 +1,13 @@
-import { Request, Response, NextFunction } from 'express';
-import Cause from 'models/Cause';
+import { RequestHandler } from 'express';
+import { Causes } from 'models';
 
-async function getCausesController(req: Request, res: Response, next: NextFunction) {
+const getCausesController: RequestHandler = async (req, res, next) => {
   try {
-    const causes = await Cause.findAll();
+    const causes = await Causes.findAll();
     res.json(causes);
   } catch (err) {
     next(err);
   }
-}
+};
 
 export default getCausesController;

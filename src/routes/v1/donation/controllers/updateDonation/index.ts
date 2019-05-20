@@ -1,7 +1,7 @@
-import { Request, Response, NextFunction } from 'express';
+import { RequestHandler } from 'express';
 // import { bodySchema } from './validate';
 
-const updateDonationController = async (req: Request, res: Response, next: NextFunction) => {
+const updateDonationController: RequestHandler = async (req, res, next) => {
   try {
     // await bodySchema.validate(req.body);
     res.send('Update Donation');
