@@ -1,3 +1,3 @@
-import { NextFunction, Response, Request } from 'express';
-declare function getOrgNewsFeedController(req: Request, res: Response, next: NextFunction): Promise<void>;
+import { RequestHandler } from 'express';
+declare const getOrgNewsFeedController: RequestHandler;
 export default getOrgNewsFeedController;

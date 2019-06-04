@@ -18,5 +18,10 @@ declare const attributes: {
         allowNull: boolean;
         get(): number;
     };
+    [CauseKeys.GOAL_AMOUNT]: {
+        type: Sequelize.DataTypeDecimal;
+        allowNull: boolean;
+        get(): number;
+    };
 };
 export default attributes;

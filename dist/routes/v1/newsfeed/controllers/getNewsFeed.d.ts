@@ -1,3 +1,3 @@
-import { Request, Response, NextFunction } from 'express';
-declare const getNewsFeedController: (req: Request, res: Response, next: NextFunction) => Promise<void>;
+import { RequestHandler } from 'express';
+declare const getNewsFeedController: RequestHandler;
 export default getNewsFeedController;

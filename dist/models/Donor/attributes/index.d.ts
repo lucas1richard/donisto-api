@@ -4,16 +4,16 @@ declare const attributes: {
         type: Sequelize.DataTypeBigInt;
         autoIncrement: boolean;
     };
-    [ContactKeys.UUID]: {
+    [DonorKeys.UUID]: {
         type: Sequelize.DataTypeUUID;
         defaultValue: Sequelize.DataTypeUUIDv4;
         primaryKey: boolean;
     };
-    [ContactKeys.FIRST_NAME]: {
+    [DonorKeys.FIRST_NAME]: {
         type: Sequelize.DataTypeString;
         allowNull: boolean;
     };
-    [ContactKeys.LAST_NAME]: {
+    [DonorKeys.LAST_NAME]: {
         type: Sequelize.DataTypeString;
         allowNull: boolean;
     };

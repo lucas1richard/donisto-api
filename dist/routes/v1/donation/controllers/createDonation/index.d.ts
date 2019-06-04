@@ -1,3 +1,3 @@
-import { Request, Response, NextFunction } from 'express';
-declare const createDonationController: (req: Request, res: Response, next: NextFunction) => Promise<void>;
+import { RequestHandler } from 'express';
+declare const createDonationController: RequestHandler;
 export default createDonationController;

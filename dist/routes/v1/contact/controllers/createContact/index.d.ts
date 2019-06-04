@@ -1,3 +1,3 @@
-import { Request, Response, NextFunction } from 'express';
-declare const createContactController: (req: Request, res: Response, next: NextFunction) => Promise<void>;
+import { RequestHandler } from 'express';
+declare const createContactController: RequestHandler;
 export default createContactController;

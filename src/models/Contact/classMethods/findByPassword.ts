@@ -40,6 +40,11 @@ const findByPassword: IFindByPassword = async function (credentials) {
         },
         [ContactKeys.PASSWORD]: value
       },
+      attributes: {
+        exclude: [
+          ContactKeys.SALT,
+        ],
+      },
       include: [{
         model: Organizations
       }]

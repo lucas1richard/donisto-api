@@ -1,3 +1,3 @@
-import { Request, Response, NextFunction } from 'express';
-declare function getCausesController(req: Request, res: Response, next: NextFunction): Promise<void>;
+import { RequestHandler } from 'express';
+declare const getCausesController: RequestHandler;
 export default getCausesController;

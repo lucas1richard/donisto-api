@@ -13,5 +13,14 @@ declare const attributes: {
         type: Sequelize.DataTypeDecimal;
         get(): number;
     };
+    [DonationKeys.IS_ANONYMOUS]: {
+        type: Sequelize.DataTypeBoolean;
+        defaultValue: boolean;
+        allowNull: boolean;
+    };
+    [DonationKeys.MESSAGE]: {
+        type: Sequelize.DataTypeText;
+        allowNull: boolean;
+    };
 };
 export default attributes;
