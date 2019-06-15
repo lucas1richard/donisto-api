@@ -17,7 +17,7 @@ const createDonationController: RequestHandler = async (req, res, next) => {
     }, { transaction });
     const contact = await Contacts.findOne({
       where: {
-        [ContactKeys.UUID]: res.locals.uuid
+        [ContactKeys.UUID]: req.user,
       }
     });
     const cause = await Causes.findOne({

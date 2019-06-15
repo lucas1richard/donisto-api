@@ -5,11 +5,13 @@ import { OrganizationsContacts, Organizations } from 'models';
 import { OrganizationKeys } from 'models/keys';
 import OrganizationsContactsAttributes from 'models/OrganizationsContacts/types/Attributes';
 
+const noOrgPlaceholder: any[] = [];
+
 const getContactOrganizationsController: RequestHandler = async (req, res, next) => {
   try {
     const organizationUuids = await OrganizationsContacts.findAll({
       where: {
-        [foreignKeys.CONTACT]: res.locals.uuid
+        [foreignKeys.CONTACT]: req.user,
       }
     });
 
@@ -23,7 +25,7 @@ const getContactOrganizationsController: RequestHandler = async (req, res, next)
       }
     });
 
-    res.json(organizations);
+    res.json(organizations || noOrgPlaceholder);
   } catch (err) {
     next(err);
   }

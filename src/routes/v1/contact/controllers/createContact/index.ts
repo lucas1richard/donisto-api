@@ -13,7 +13,10 @@ const createContactController: RequestHandler = async (req, res, next) => {
 
     res
       .set('token', token)
-      .json(contact);
+      .json({
+        ...contact.get(),
+        organizations: []
+      });
   } catch (err) {
     next(err);
   }

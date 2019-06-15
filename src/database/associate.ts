@@ -8,6 +8,7 @@ import Cause from 'models/Cause';
 import NewsFeedCauses from 'models/NewsFeedCauses';
 import Donation from 'models/Donation';
 import Links from 'models/Links';
+import ContactOrgFollows from 'models/ContactOrgFollows';
 
 // Organization.hasMany(Contact, {
 //   foreignKey: foreignKeys.ORGANIZATION
@@ -21,12 +22,19 @@ const newsfeed = { foreignKey: foreignKeys.NEWSFEED };
 const thruOrgContacts = {
   through: OrganizationsContacts
 };
+const thruOrgContactsFollows = {
+  through: ContactOrgFollows
+};
+
 const thruNewsFeedCauses = {
   through: NewsFeedCauses
 };
 
 Contact.belongsToMany(Organization, { ...thruOrgContacts, ...contact });
 Organization.belongsToMany(Contact, { ...thruOrgContacts, ...org });
+
+Contact.belongsToMany(Organization, { ...thruOrgContactsFollows, ...contact, as: 'scontact' });
+Organization.belongsToMany(Contact, { ...thruOrgContactsFollows, ...org, as: 'sorganization' });
 
 Cause.belongsToMany(NewsFeed, { ...thruNewsFeedCauses, ...cause });
 NewsFeed.belongsToMany(Cause, { ...thruNewsFeedCauses, ...newsfeed });

@@ -14,7 +14,7 @@ const createOrganizationController: RequestHandler = async (req, res, next) => {
 
     const contact = await Contacts.findOne({
       where: {
-        [ContactKeys.UUID]: res.locals.uuid
+        [ContactKeys.UUID]: req.user
       }
     });
 

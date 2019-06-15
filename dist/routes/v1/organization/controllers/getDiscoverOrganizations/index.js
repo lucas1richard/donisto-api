@@ -1,0 +1,14 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+const getDiscoverOrganizationsController = async (req, res, next) => {
+  try {} catch (err) {}
+};
+
+var _default = getDiscoverOrganizationsController;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3NyYy9yb3V0ZXMvdjEvb3JnYW5pemF0aW9uL2NvbnRyb2xsZXJzL2dldERpc2NvdmVyT3JnYW5pemF0aW9ucy9pbmRleC50cyJdLCJuYW1lcyI6WyJnZXREaXNjb3Zlck9yZ2FuaXphdGlvbnNDb250cm9sbGVyIiwicmVxIiwicmVzIiwibmV4dCIsImVyciJdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUVBLE1BQU1BLGtDQUFrRCxHQUFHLE9BQU9DLEdBQVAsRUFBWUMsR0FBWixFQUFpQkMsSUFBakIsS0FBMEI7QUFDbkYsTUFBSSxDQUVILENBRkQsQ0FFRSxPQUFPQyxHQUFQLEVBQVksQ0FFYjtBQUNGLENBTkQ7O2VBUWVKLGtDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgUmVxdWVzdEhhbmRsZXIgfSBmcm9tICdleHByZXNzJztcblxuY29uc3QgZ2V0RGlzY292ZXJPcmdhbml6YXRpb25zQ29udHJvbGxlcjogUmVxdWVzdEhhbmRsZXIgPSBhc3luYyAocmVxLCByZXMsIG5leHQpID0+IHtcbiAgdHJ5IHtcblxuICB9IGNhdGNoIChlcnIpIHtcblxuICB9XG59O1xuXG5leHBvcnQgZGVmYXVsdCBnZXREaXNjb3Zlck9yZ2FuaXphdGlvbnNDb250cm9sbGVyOyJdfQ==

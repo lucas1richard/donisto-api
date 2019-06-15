@@ -6,7 +6,7 @@ const getDonationController: RequestHandler = async (req, res, next) => {
   try {
     const donations = await Donations.findAll({
       where: {
-        [foreignKeys.CONTACT]: res.locals.uuid
+        [foreignKeys.CONTACT]: req.user,
       }
     });
     res.json(donations);
