@@ -21,10 +21,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator());
 app.use(lusca.xframe('SAMEORIGIN'));
 app.use(lusca.xssProtection(true));
-// app.use((req, res, next) => {
-//   res.locals.user = req.user;
-//   next();
-// });
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Donisto API');
