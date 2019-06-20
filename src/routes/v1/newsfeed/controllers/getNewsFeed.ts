@@ -78,3 +78,6 @@ const getNewsFeedController: RequestHandler = async (req, res, next) => {
 };
 
 export default getNewsFeedController;
+
+// select name, rejected, email from contactorgfollows join organizations on (contactorgfollows.organization_uuid = organizations.uuid) join contacts on (contactorgfollows.contact_uuid = contacts.uuid);
+
