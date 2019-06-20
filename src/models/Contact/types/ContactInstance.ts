@@ -8,5 +8,5 @@ export interface ContactPrototype {
   prototype: ContactInstanceMethods;
 }
 
-export interface ContactInstance extends Sequelize.Instance<ContactAttributes>, ContactInstanceMethods, ContactAttributes {
+export interface ContactInstance extends Sequelize.Model<ContactAttributes>, ContactInstanceMethods, ContactAttributes {
 }

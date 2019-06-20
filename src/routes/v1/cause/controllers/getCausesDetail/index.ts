@@ -1,9 +1,9 @@
 import { RequestHandler } from 'express';
 import { Causes, Donations, Contacts } from 'models';
 import { CauseKeys, ContactKeys } from 'models/keys';
-import conn from 'database/conn';
+import Sequelize from 'sequelize';
 
-const { Op } = conn;
+const { Op } = Sequelize;
 
 const getCausesDetailController: RequestHandler = async (req, res, next) => {
   try {

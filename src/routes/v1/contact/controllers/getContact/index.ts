@@ -6,7 +6,7 @@ const getContactController: RequestHandler = async (req, res, next) => {
   try {
     const contact = await Contacts.findOne({
       where: {
-        uuid: req.user,
+        uuid: req.user.uuid,
       },
       attributes: {
         exclude: [

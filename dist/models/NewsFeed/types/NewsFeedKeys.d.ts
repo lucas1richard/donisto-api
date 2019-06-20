@@ -1,6 +1,6 @@
 declare enum NewsFeedKeys {
     UUID = "uuid",
     TITLE = "title",
-    TEXT = "text"
+    TEXT = "text",
 }
 export default NewsFeedKeys;

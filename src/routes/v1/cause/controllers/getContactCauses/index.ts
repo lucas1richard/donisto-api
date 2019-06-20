@@ -14,7 +14,7 @@ const getContactCausesController: RequestHandler = async (req, res, next) => {
           attributes: ['uuid'],
           required: true,
           where: {
-            uuid: req.user,
+            uuid: req.user.uuid,
           },
         }]
       }]

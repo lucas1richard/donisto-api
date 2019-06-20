@@ -3,6 +3,6 @@ declare enum LinksKeys {
     LABEL = "label",
     IMAGE = "image",
     DESCRIPTION = "description",
-    HREF = "href"
+    HREF = "href",
 }
 export default LinksKeys;

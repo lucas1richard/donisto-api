@@ -8,3 +8,5 @@ export { default as NewsFeedCauses } from './NewsFeedCauses';
 export { default as Organizations } from './Organization';
 export { default as OrganizationsContacts } from './OrganizationsContacts';
 export { default as ContactOrgFollows } from './ContactOrgFollows';
+
+import './getMethods';

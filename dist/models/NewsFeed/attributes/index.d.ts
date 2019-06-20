@@ -1,19 +1,19 @@
 import Sequelize from 'sequelize';
 declare const attributes: {
     id: {
-        type: Sequelize.DataTypeBigInt;
+        type: Sequelize.BigIntDataTypeConstructor;
         autoIncrement: boolean;
     };
     [NewsFeedKeys.UUID]: {
-        type: Sequelize.DataTypeUUID;
-        defaultValue: Sequelize.DataTypeUUIDv4;
+        type: Sequelize.AbstractDataTypeConstructor;
+        defaultValue: Sequelize.AbstractDataTypeConstructor;
         primaryKey: boolean;
     };
     [NewsFeedKeys.TITLE]: {
-        type: Sequelize.DataTypeString;
+        type: Sequelize.StringDataTypeConstructor;
     };
     [NewsFeedKeys.TEXT]: {
-        type: Sequelize.DataTypeText;
+        type: Sequelize.TextDataTypeConstructor;
     };
 };
 export default attributes;

@@ -26,7 +26,7 @@ async function authMiddlewareFunc(req: Request, res: Response, next: NextFunctio
           : authorization
       );
       Object.assign(res.locals, { user_id, uuid });
-      req.user = uuid;
+      req.user = { uuid };
     } else {
       Object.assign(res.locals, { user_id: req.headers.user_id || 1 });
     }

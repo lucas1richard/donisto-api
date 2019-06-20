@@ -1,11 +1,9 @@
 import Sequelize from 'sequelize';
-import ContactAttributes from './types/Attributes';
 import { IFindByPassword } from './classMethods/findByPassword';
 import { ContactInstance } from './types/ContactInstance';
-interface IContactsClassMethods {
+export declare type IContactsModelStatic = typeof Sequelize.Model & {
+    new (values?: object, options?: Sequelize.BuildOptions): ContactInstance;
     findByPassword: IFindByPassword;
-}
-interface IContactsModel extends Sequelize.Model<ContactInstance, ContactAttributes>, IContactsClassMethods {
-}
-declare const Contacts: IContactsModel;
+};
+declare const Contacts: IContactsModelStatic;
 export default Contacts;

@@ -1,32 +1,32 @@
 import Sequelize from 'sequelize';
 declare const attributes: {
     id: {
-        type: Sequelize.DataTypeBigInt;
+        type: Sequelize.BigIntDataTypeConstructor;
         autoIncrement: boolean;
     };
     [OrganizationKeys.UUID]: {
-        type: Sequelize.DataTypeUUID;
-        defaultValue: Sequelize.DataTypeUUIDv4;
+        type: Sequelize.AbstractDataTypeConstructor;
+        defaultValue: Sequelize.AbstractDataTypeConstructor;
         primaryKey: boolean;
     };
     [OrganizationKeys.NAME]: {
-        type: Sequelize.DataTypeString;
+        type: Sequelize.StringDataTypeConstructor;
         allowNull: boolean;
     };
     [OrganizationKeys.CITY]: {
-        type: Sequelize.DataTypeString;
+        type: Sequelize.StringDataTypeConstructor;
         allowNull: boolean;
     };
     [OrganizationKeys.STATE]: {
-        type: Sequelize.DataTypeString;
+        type: Sequelize.StringDataTypeConstructor;
         allowNull: boolean;
     };
     [OrganizationKeys.MISSION]: {
-        type: Sequelize.DataTypeText;
+        type: Sequelize.TextDataTypeConstructor;
         allowNull: boolean;
     };
     [OrganizationKeys.ZIP]: {
-        type: Sequelize.DataTypeString;
+        type: Sequelize.StringDataTypeConstructor;
         allowNull: boolean;
     };
 };

@@ -8,5 +8,5 @@ export interface ContactOrgFollowsPrototype {
   prototype: ContactOrgFollowsInstanceMethods;
 }
 
-export interface ContactOrgFollowsInstance extends Sequelize.Instance<ContactOrgFollowsAttributes>, ContactOrgFollowsInstanceMethods, ContactOrgFollowsAttributes {
+export interface ContactOrgFollowsInstance extends Sequelize.Model<ContactOrgFollowsAttributes>, ContactOrgFollowsInstanceMethods, ContactOrgFollowsAttributes {
 }

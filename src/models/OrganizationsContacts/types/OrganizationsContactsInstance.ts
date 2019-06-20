@@ -8,5 +8,5 @@ export interface OrganizationsContactsPrototype {
   prototype: OrganizationsContactsInstanceMethods;
 }
 
-export interface OrganizationsContactsInstance extends Sequelize.Instance<OrganizationsContactsAttributes>, OrganizationsContactsInstanceMethods, OrganizationsContactsAttributes {
+export interface OrganizationsContactsInstance extends Sequelize.Model<OrganizationsContactsAttributes>, OrganizationsContactsInstanceMethods, OrganizationsContactsAttributes {
 }

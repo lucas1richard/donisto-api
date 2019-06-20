@@ -11,7 +11,7 @@ const getContactOrganizationsController: RequestHandler = async (req, res, next)
   try {
     const organizationUuids = await OrganizationsContacts.findAll({
       where: {
-        [foreignKeys.CONTACT]: req.user,
+        [foreignKeys.CONTACT]: req.user.uuid,
       }
     });
 

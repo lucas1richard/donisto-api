@@ -1,9 +1,7 @@
 import Sequelize from 'sequelize';
-import NewsFeedCausesAttributes from './types/Attributes';
 import { NewsFeedCausesInstance } from './types/NewsFeedCausesInstance';
-interface INewsFeedCausesMethods {
-}
-interface INewsFeedCauses extends Sequelize.Model<NewsFeedCausesInstance, NewsFeedCausesAttributes>, INewsFeedCausesMethods {
-}
-declare const NewsFeedCauses: INewsFeedCauses;
+export declare type INewsFeedCausesModel = typeof Sequelize.Model & {
+    new (values?: object, options?: Sequelize.BuildOptions): NewsFeedCausesInstance;
+};
+declare const NewsFeedCauses: INewsFeedCausesModel;
 export default NewsFeedCauses;

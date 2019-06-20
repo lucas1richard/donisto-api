@@ -1,3 +1,2 @@
-import Sequelize from 'sequelize';
-declare const seqInstance: Sequelize.Sequelize;
+declare const seqInstance: any;
 export default seqInstance;

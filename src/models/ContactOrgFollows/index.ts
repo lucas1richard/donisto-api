@@ -9,7 +9,13 @@ interface IContactOrgFollowsMethods {
 
 interface IContactOrgFollows extends Sequelize.Model<ContactOrgFollowsInstance, ContactOrgFollowsAttributes>, IContactOrgFollowsMethods {}
 
-const ContactOrgFollows = sequelize.define('contactorgfollows', attributes, {
-}) as IContactOrgFollows;
+export type IContactOrgFollowsModel = typeof Sequelize.Model & {
+  new (values?: object, options?: Sequelize.BuildOptions): ContactOrgFollowsInstance;
+};
+
+export const contactOrgFollows = 'contactorgfollows';
+
+const ContactOrgFollows = <IContactOrgFollowsModel>sequelize.define(contactOrgFollows, attributes, {
+});
 
 export default ContactOrgFollows;

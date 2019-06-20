@@ -8,5 +8,5 @@ export interface NewsFeedCausesPrototype {
   prototype: NewsFeedCausesInstanceMethods;
 }
 
-export interface NewsFeedCausesInstance extends Sequelize.Instance<NewsFeedCausesAttributes>, NewsFeedCausesInstanceMethods, NewsFeedCausesAttributes {
+export interface NewsFeedCausesInstance extends Sequelize.Model<NewsFeedCausesAttributes>, NewsFeedCausesInstanceMethods, NewsFeedCausesAttributes {
 }

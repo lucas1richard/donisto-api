@@ -14,11 +14,15 @@ const createOrganizationController: RequestHandler = async (req, res, next) => {
 
     const contact = await Contacts.findOne({
       where: {
-        [ContactKeys.UUID]: req.user
+        [ContactKeys.UUID]: req.user.uuid,
       }
     });
 
-    organization.addContact(contact, { through: OrganizationsContacts });
+    organization.addContact(contact, {
+      through: {
+        model: OrganizationsContacts
+      }
+    });
 
     res.json({
       organization

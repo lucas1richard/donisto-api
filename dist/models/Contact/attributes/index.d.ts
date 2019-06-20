@@ -1,24 +1,24 @@
 import Sequelize from 'sequelize';
 declare const attributes: {
     id: {
-        type: Sequelize.DataTypeBigInt;
+        type: Sequelize.BigIntDataTypeConstructor;
         autoIncrement: boolean;
     };
     [ContactKeys.UUID]: {
-        type: Sequelize.DataTypeUUID;
-        defaultValue: Sequelize.DataTypeUUIDv4;
+        type: Sequelize.AbstractDataTypeConstructor;
+        defaultValue: Sequelize.AbstractDataTypeConstructor;
         primaryKey: boolean;
     };
     [ContactKeys.FIRST_NAME]: {
-        type: Sequelize.DataTypeString;
+        type: Sequelize.StringDataTypeConstructor;
         allowNull: boolean;
     };
     [ContactKeys.LAST_NAME]: {
-        type: Sequelize.DataTypeString;
+        type: Sequelize.StringDataTypeConstructor;
         allowNull: boolean;
     };
     [ContactKeys.EMAIL]: {
-        type: Sequelize.DataTypeString;
+        type: Sequelize.StringDataTypeConstructor;
         validate: {
             isEmail: boolean;
         };
@@ -26,24 +26,24 @@ declare const attributes: {
         allowNull: boolean;
     };
     [ContactKeys.CITY]: {
-        type: Sequelize.DataTypeString;
+        type: Sequelize.StringDataTypeConstructor;
     };
     [ContactKeys.STATE]: {
-        type: Sequelize.DataTypeString;
+        type: Sequelize.StringDataTypeConstructor;
     };
     [ContactKeys.ZIP]: {
-        type: Sequelize.DataTypeString;
+        type: Sequelize.StringDataTypeConstructor;
     };
     [ContactKeys.PASSWORD]: {
-        type: Sequelize.DataTypeText;
+        type: Sequelize.TextDataTypeConstructor;
         allowNull: boolean;
     };
     [ContactKeys.SALT]: {
-        type: Sequelize.DataTypeText;
+        type: Sequelize.TextDataTypeConstructor;
         allowNull: boolean;
     };
     [ContactKeys.FACEBOOK_ID]: {
-        type: Sequelize.DataTypeText;
+        type: Sequelize.TextDataTypeConstructor;
         allowNull: boolean;
     };
 };

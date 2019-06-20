@@ -8,5 +8,5 @@ export interface LinksPrototype {
   prototype: LinksInstanceMethods;
 }
 
-export interface LinksInstance extends Sequelize.Instance<LinksAttributes>, LinksInstanceMethods, LinksAttributes {
+export interface LinksInstance extends Sequelize.Model<LinksAttributes>, LinksInstanceMethods, LinksAttributes {
 }

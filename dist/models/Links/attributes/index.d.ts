@@ -1,28 +1,28 @@
 import Sequelize from 'sequelize';
 declare const attributes: {
     id: {
-        type: Sequelize.DataTypeBigInt;
+        type: Sequelize.BigIntDataTypeConstructor;
         autoIncrement: boolean;
     };
     [LinksKeys.UUID]: {
-        type: Sequelize.DataTypeUUID;
-        defaultValue: Sequelize.DataTypeUUIDv4;
+        type: Sequelize.AbstractDataTypeConstructor;
+        defaultValue: Sequelize.AbstractDataTypeConstructor;
         primaryKey: boolean;
     };
     [LinksKeys.HREF]: {
-        type: Sequelize.DataTypeText;
+        type: Sequelize.TextDataTypeConstructor;
         allowNull: boolean;
     };
     [LinksKeys.DESCRIPTION]: {
-        type: Sequelize.DataTypeText;
+        type: Sequelize.TextDataTypeConstructor;
         allowNull: boolean;
     };
     [LinksKeys.LABEL]: {
-        type: Sequelize.DataTypeString;
+        type: Sequelize.StringDataTypeConstructor;
         allowNull: boolean;
     };
     [LinksKeys.IMAGE]: {
-        type: Sequelize.DataTypeString;
+        type: Sequelize.StringDataTypeConstructor;
         allowNull: boolean;
     };
 };
