@@ -9,7 +9,11 @@ interface INewsFeedMethods {
 
 interface INewsFeed extends Sequelize.Model<NewsFeedInstance, NewsFeedAttributes>, INewsFeedMethods {}
 
-const NewsFeed = sequelize.define('newsfeed', attributes, {
-}) as INewsFeed;
+export type INewsFeedModel = typeof Sequelize.Model & {
+  new (values?: object, options?: Sequelize.BuildOptions): NewsFeedInstance;
+};
+
+const NewsFeed = <INewsFeedModel>sequelize.define('newsfeed', attributes, {
+});
 
 export default NewsFeed;

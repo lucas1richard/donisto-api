@@ -5,13 +5,13 @@ const updateContactController: RequestHandler = async (req, res, next) => {
   try {
     const contact = await Contact.findOne({
       where: {
-        uuid: req.user,
+        uuid: req.user.uuid,
       }
     });
     await contact.update(req.body);
     const updatedContact = await Contact.findOne({
       where: {
-        uuid: req.user,
+        uuid: req.user.uuid,
       }
     });
     res.json(updatedContact);

@@ -1,20 +1,20 @@
 import Sequelize from 'sequelize';
 declare const attributes: {
     id: {
-        type: Sequelize.DataTypeBigInt;
+        type: Sequelize.BigIntDataTypeConstructor;
         autoIncrement: boolean;
     };
     [DonorKeys.UUID]: {
-        type: Sequelize.DataTypeUUID;
-        defaultValue: Sequelize.DataTypeUUIDv4;
+        type: Sequelize.AbstractDataTypeConstructor;
+        defaultValue: Sequelize.AbstractDataTypeConstructor;
         primaryKey: boolean;
     };
     [DonorKeys.FIRST_NAME]: {
-        type: Sequelize.DataTypeString;
+        type: Sequelize.StringDataTypeConstructor;
         allowNull: boolean;
     };
     [DonorKeys.LAST_NAME]: {
-        type: Sequelize.DataTypeString;
+        type: Sequelize.StringDataTypeConstructor;
         allowNull: boolean;
     };
 };

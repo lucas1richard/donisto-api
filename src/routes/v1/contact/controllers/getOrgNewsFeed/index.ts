@@ -9,7 +9,7 @@ const getOrgNewsFeedController: RequestHandler = async (req, res, next) => {
     // get organizations associated to the contact
     const organizationUuids = await OrganizationsContacts.findAll({
       where: {
-        [foreignKeys.CONTACT]: req.user,
+        [foreignKeys.CONTACT]: req.user.uuid,
       }
     });
 

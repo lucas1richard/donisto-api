@@ -1,4 +1,4 @@
 declare enum OrganizationsContactsKeys {
-    UUID = "uuid"
+    UUID = "uuid",
 }
 export default OrganizationsContactsKeys;

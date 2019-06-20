@@ -1,4 +1,4 @@
 declare enum NewsFeedCausesKeys {
-    UUID = "uuid"
+    UUID = "uuid",
 }
 export default NewsFeedCausesKeys;

@@ -12,5 +12,5 @@ export interface DonationPrototype {
   prototype: DonationInstanceMethods;
 }
 
-export interface DonationInstance extends Sequelize.Instance<DonationAttributes>, DonationInstanceMethods, DonationAttributes {
+export interface DonationInstance extends Sequelize.Model<DonationAttributes>, DonationInstanceMethods, DonationAttributes {
 }

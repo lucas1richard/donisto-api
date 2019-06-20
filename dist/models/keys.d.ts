@@ -7,3 +7,4 @@ export { default as NewsFeedKeys } from './NewsFeed/types/NewsFeedKeys';
 export { default as NewsFeedCausesKeys } from './NewsFeedCauses/types/NewsFeedCausesKeys';
 export { default as OrganizationKeys } from './Organization/types/OrganizationKeys';
 export { default as OrganizationsContactsKeys } from './OrganizationsContacts/types/OrganizationsContactsKeys';
+export { default as ContactOrgFollowsKeys } from './ContactOrgFollows/types/ContactOrgFollowsKeys';

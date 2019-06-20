@@ -8,7 +8,7 @@ import './database/associate';
  */
 // app.use(errorHandler());
 
-conn.sync();
+conn.sync({ logging: false });
 
 /**
  * Start Express server.

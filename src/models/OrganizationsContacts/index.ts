@@ -9,7 +9,13 @@ interface IOrganizationsContactsMethods {
 
 interface IOrganizationsContacts extends Sequelize.Model<OrganizationsContactsInstance, OrganizationsContactsAttributes>, IOrganizationsContactsMethods {}
 
-const OrganizationsContacts = sequelize.define('organizationscontacts', attributes, {
-}) as IOrganizationsContacts;
+export type IOrganizationsContactsModel = typeof Sequelize.Model & {
+  new (values?: object, options?: Sequelize.BuildOptions): OrganizationsContactsInstance;
+};
+
+export const organizationsContacts = 'organizationscontacts';
+
+const OrganizationsContacts = <IOrganizationsContactsModel>sequelize.define(organizationsContacts, attributes, {
+});
 
 export default OrganizationsContacts;

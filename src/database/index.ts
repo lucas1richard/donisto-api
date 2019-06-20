@@ -4,7 +4,6 @@ import logger, { ILogger } from './logger';
 export interface IndDbConfig {
   url: string;
   logging?: ILogger | false;
-  operatorsAliases: boolean;
 }
 
 export interface DBConfig {
@@ -19,17 +18,14 @@ const config: DBConfig = {
     url: process.env.DATABASE_URL,
     // logging: false,
     logging: logger,
-    operatorsAliases: false
   },
   test: {
     url: process.env.TEST_DATABASE_URL,
     logging: false,
-    operatorsAliases: false
   },
   production: {
     url: process.env.DATABASE_URL,
     logging: console.log,
-    operatorsAliases: false
   }
 };
 

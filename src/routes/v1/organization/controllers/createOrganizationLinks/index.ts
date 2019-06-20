@@ -9,12 +9,12 @@ const createOrganizationLinksController: RequestHandler =  async (req, res, next
   try {
     transaction = await seqInstance.transaction();
     const { links, organization_uuid } = req.body;
-    const organization = await Organizations.findByPrimary(organization_uuid);
+    const organization = await Organizations.findByPk(organization_uuid);
     const linksInstances = await Links.bulkCreate(links, { transaction });
-    await Promise.all(
-      linksInstances.map((linkInstance) => organization.addLink(linkInstance, { transaction }))
-    );
+    await organization.addLinks(linksInstances, { transaction });
+
     await transaction.commit();
+
     const orgWithLinks = await Organizations.findOne({
       where: {
         [OrganizationKeys.UUID]: organization_uuid

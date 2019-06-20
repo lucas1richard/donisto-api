@@ -10,5 +10,5 @@ export interface CausePrototype {
   prototype: CauseInstanceMethods;
 }
 
-export interface CauseInstance extends Sequelize.Instance<CauseAttributes>, CauseInstanceMethods, CauseAttributes {
+export interface CauseInstance extends Sequelize.Model<CauseAttributes>, CauseInstanceMethods, CauseAttributes {
 }

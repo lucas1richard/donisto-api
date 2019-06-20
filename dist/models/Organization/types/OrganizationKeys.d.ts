@@ -4,6 +4,6 @@ declare enum OrganizationKeys {
     CITY = "city",
     STATE = "state",
     MISSION = "mission",
-    ZIP = "zip"
+    ZIP = "zip",
 }
 export default OrganizationKeys;

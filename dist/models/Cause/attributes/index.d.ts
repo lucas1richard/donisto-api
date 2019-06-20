@@ -1,25 +1,25 @@
 import Sequelize from 'sequelize';
 declare const attributes: {
     id: {
-        type: Sequelize.DataTypeBigInt;
+        type: Sequelize.BigIntDataTypeConstructor;
         autoIncrement: boolean;
     };
     [CauseKeys.UUID]: {
-        type: Sequelize.DataTypeUUID;
-        defaultValue: Sequelize.DataTypeUUIDv4;
+        type: Sequelize.AbstractDataTypeConstructor;
+        defaultValue: Sequelize.AbstractDataTypeConstructor;
         primaryKey: boolean;
     };
     [CauseKeys.NAME]: {
-        type: Sequelize.DataTypeString;
+        type: Sequelize.StringDataTypeConstructor;
         allowNull: boolean;
     };
     [CauseKeys.SUGGESTED_DONATION]: {
-        type: Sequelize.DataTypeDecimal;
+        type: Sequelize.DecimalDataTypeConstructor;
         allowNull: boolean;
         get(): number;
     };
     [CauseKeys.GOAL_AMOUNT]: {
-        type: Sequelize.DataTypeDecimal;
+        type: Sequelize.DecimalDataTypeConstructor;
         allowNull: boolean;
         get(): number;
     };

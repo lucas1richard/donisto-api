@@ -12,11 +12,16 @@ interface IContactsClassMethods {
 
 interface IContactsModel extends Sequelize.Model<ContactInstance, ContactAttributes>, IContactsClassMethods {}
 
-const Contacts = sequelize.define('contacts', attributes, {
+export type IContactsModelStatic = typeof Sequelize.Model & {
+  new (values?: object, options?: Sequelize.BuildOptions): ContactInstance;
+  findByPassword: IFindByPassword;
+};
+
+const Contacts = <IContactsModelStatic>sequelize.define('contacts', attributes, {
   hooks: {
     beforeCreate
   }
-}) as IContactsModel;
+});
 
 Contacts.findByPassword = findByPassword;
 

@@ -1,8 +1,8 @@
 import { RequestHandler } from 'express';
-import { Organizations, Contacts, ContactOrgFollows } from 'models';
+import { Organizations, Contacts } from 'models';
 import { OrganizationKeys, ContactKeys, ContactOrgFollowsKeys } from 'models/keys';
 
-const followOrganizationController: RequestHandler = async (req, res, next) => {
+const unfollowOrganizationController: RequestHandler = async (req, res, next) => {
   try {
     const organization = await Organizations.findOne({
       where: {
@@ -12,16 +12,15 @@ const followOrganizationController: RequestHandler = async (req, res, next) => {
 
     const contact = await Contacts.findOne({
       where: {
-        [ContactKeys.UUID]: req.user
+        [ContactKeys.UUID]: req.user.uuid,
       }
     });
 
-    await organization.addContact(contact, {
+    await organization.addFollowContact(contact, {
       through: {
-        model: ContactOrgFollows,
         [ContactOrgFollowsKeys.REJECTED]: true,
       }
-  });
+    });
 
     res.json(organization);
   } catch (err) {
@@ -29,4 +28,4 @@ const followOrganizationController: RequestHandler = async (req, res, next) => {
   }
 };
 
-export default followOrganizationController;
+export default unfollowOrganizationController;

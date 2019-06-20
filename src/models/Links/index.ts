@@ -9,7 +9,11 @@ interface ILinksMethods {
 
 interface ILinks extends Sequelize.Model<LinksInstance, LinksAttributes>, ILinksMethods {}
 
-const Links = sequelize.define('links', attributes, {
-}) as ILinks;
+export type ILinksModel = typeof Sequelize.Model & {
+  new (values?: object, options?: Sequelize.BuildOptions): LinksInstance;
+};
+
+const Links = <ILinksModel>sequelize.define('links', attributes, {
+});
 
 export default Links;

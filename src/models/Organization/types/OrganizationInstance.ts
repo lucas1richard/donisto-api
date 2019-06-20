@@ -2,18 +2,19 @@ import * as Sequelize from 'sequelize';
 import OrganizationAttributes from './Attributes';
 import { ContactInstance } from 'models/Contact/types/ContactInstance';
 import { LinksInstance } from 'models/Links/types/LinksInstance';
-import { ContactKeys } from 'models/keys';
-import OrganizationsContactsAttributes from 'models/OrganizationsContacts/types/Attributes';
 
 interface OrganizationInstanceMethods {
-  addContact: Sequelize.BelongsToManyAddAssociationsMixin<ContactInstance, ContactKeys.UUID, OrganizationsContactsAttributes>;
-  // addContact(instance: ContactInstance, options: Sequelize.BelongsToManyAddAssociationsMixinOptions): any;
-  addLink(instance: LinksInstance, options: { transaction: Sequelize.Transaction }): any;
+  addContact: Sequelize.BelongsToManyAddAssociationMixin<ContactInstance, string>;
+  addContacts: Sequelize.BelongsToManyAddAssociationsMixin<ContactInstance, string>;
+  addFollowContact: Sequelize.BelongsToManyAddAssociationMixin<ContactInstance, string>;
+  removeFollowContact: Sequelize.BelongsToManyRemoveAssociationMixin<ContactInstance, string>;
+  addLink: Sequelize.HasManyAddAssociationMixin<LinksInstance, string>;
+  addLinks: Sequelize.HasManyAddAssociationsMixin<LinksInstance, string>;
 }
 
 export interface OrganizationPrototype {
   prototype: OrganizationInstanceMethods;
 }
 
-export interface OrganizationInstance extends Sequelize.Instance<OrganizationAttributes>, OrganizationInstanceMethods, OrganizationAttributes {
+export interface OrganizationInstance extends Sequelize.Model, OrganizationInstanceMethods, OrganizationAttributes {
 }

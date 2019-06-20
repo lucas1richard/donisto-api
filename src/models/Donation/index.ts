@@ -9,7 +9,11 @@ interface IDonationMethods {
 
 interface IDonation extends Sequelize.Model<DonationInstance, DonationAttributes>, IDonationMethods {}
 
-const Donation = sequelize.define('donation', attributes, {
-}) as IDonation;
+export type IDonationModel = typeof Sequelize.Model & {
+  new (values?: object, options?: Sequelize.BuildOptions): DonationInstance;
+};
+
+const Donation = <IDonationModel>sequelize.define('donation', attributes, {
+});
 
 export default Donation;
