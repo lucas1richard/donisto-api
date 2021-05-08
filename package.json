@@ -55,7 +55,7 @@
     "inquirer-directory": "^2.1.0",
     "joi": "^14.3.1",
     "jwt-simple": "^0.5.5",
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.21",
     "lusca": "^1.5.2",
     "moment": "^2.24.0",
     "mongoose": "^4.13.11",
